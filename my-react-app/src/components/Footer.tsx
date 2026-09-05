@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#08170E]/80 via-[#08170E]/95 to-[#08170E] pointer-events-none" />
 
       {/* Top Right Cursive Watermark Overlay */}
-      <div className="hidden lg:block absolute top-12 right-12 text-right pointer-events-none opacity-30 z-0">
+      <div className="hidden lg:block absolute top-10 right-10 text-right pointer-events-none opacity-20 z-0">
         <div className="text-4xl sm:text-5xl font-serif italic text-emerald-100 font-normal tracking-wide transform rotate-[-2deg]">
           More <br />
           Than <br />
@@ -48,14 +48,11 @@ export const Footer: React.FC = () => {
         </svg>
       </div>
 
-      {/* Main Container - Explicit 20px padding & max-w-7xl alignment */}
-      <div 
-        style={{ padding: '20px' }}
-        className="w-full max-w-7xl mx-auto sm:px-8 lg:px-10 py-8 md:py-10 relative z-20"
-      >
+      {/* Main Container - Full 1600px Width Distribution */}
+      <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-14 py-8 md:py-10 relative z-20">
         
-        {/* 5 Grid Columns with 32px gap and Vertical Centering */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 items-center w-full">
+        {/* 5 Grid Columns filling the entire footer width smoothly */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-10 items-center w-full">
           
           {/* Column 1: Brand Info (3.5 cols) */}
           <div className="lg:col-span-3 space-y-4">
