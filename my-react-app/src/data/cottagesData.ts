@@ -15,7 +15,7 @@ export const cottagesData: Cottage[] = [
     sizeSqFt: 550,
     rating: 4.9,
     reviewsCount: 128,
-    location: 'Ooty, Tamil Nadu',
+    location: 'Hideout, Tamil Nadu',
     featuredImage: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80',
     images: [
       'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80',
@@ -128,7 +128,7 @@ export const cottagesData: Cottage[] = [
     sizeSqFt: 600,
     rating: 4.98,
     reviewsCount: 116,
-    location: 'Ooty, Tamil Nadu',
+    location: 'Hideout, Tamil Nadu',
     featuredImage: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80',
     images: [
       'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80',

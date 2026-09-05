@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Star, CheckCircle2, ChevronLeft, ChevronRight, Users, Calendar, ArrowRight, Heart } from 'lucide-react';
 import { reviewsData } from '../data/reviewsData';
 
@@ -37,7 +38,14 @@ export const ReviewsSection: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
         
         {/* Top Section Header Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-10 md:mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: '28px' }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
+        >
           
           {/* Left Main Title & Subtitle */}
           <div className="lg:col-span-8 space-y-3">
@@ -56,7 +64,7 @@ export const ReviewsSection: React.FC = () => {
             </h2>
 
             <p className="text-sm md:text-base text-gray-600 max-w-2xl leading-relaxed font-sans">
-              Over 320+ couples and families have created everlasting memories at Ooty Cottage. Here is what they have to say about their stay.
+              Over 320+ couples and families have created everlasting memories at Hideout. Here is what they have to say about their stay.
             </p>
           </div>
 
@@ -70,14 +78,19 @@ export const ReviewsSection: React.FC = () => {
             </svg>
           </div>
 
-        </div>
+        </motion.div>
 
         {/* 4 Review Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-8 md:mb-10">
-          {reviewsData.map((rev) => (
-            <div
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+          {reviewsData.map((rev, idx) => (
+            <motion.div
               key={rev.id}
-              className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group"
             >
               {/* Top Image Portion with Badges */}
               <div className="relative h-52 overflow-hidden shrink-0">
@@ -151,15 +164,15 @@ export const ReviewsSection: React.FC = () => {
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Carousel Pagination Controls */}
-        <div className="flex items-center justify-center gap-3 mb-10">
-          <button className="w-9 h-9 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
+        <div className="flex items-center justify-center gap-3" style={{ marginTop: '28px' }}>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-9 h-9 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
             <ChevronLeft className="w-4 h-4" />
-          </button>
+          </motion.button>
           <div className="flex items-center gap-2 px-2">
             {[0, 1, 2, 3].map((idx) => (
               <button
@@ -171,13 +184,13 @@ export const ReviewsSection: React.FC = () => {
               />
             ))}
           </div>
-          <button className="w-9 h-9 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-9 h-9 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
             <ChevronRight className="w-4 h-4" />
-          </button>
+          </motion.button>
         </div>
 
         {/* Section Bottom Social Proof Metrics Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-4 border-t border-gray-200/60">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-4 border-t border-gray-200/60" style={{ marginTop: '24px' }}>
           
           {/* Left Tagline & Doodle */}
           <div className="flex items-center gap-2 text-left">
@@ -224,13 +237,15 @@ export const ReviewsSection: React.FC = () => {
           </div>
 
           {/* Right Action Button */}
-          <button 
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             style={{ padding: '14px 34px' }}
             className="bg-[#0E2C20] hover:bg-[#184F39] text-white text-xs font-bold rounded-full flex items-center gap-2.5 shadow-md transition-all cursor-pointer shrink-0"
           >
             <span>Read More Reviews</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1" />
-          </button>
+          </motion.button>
 
         </div>
 

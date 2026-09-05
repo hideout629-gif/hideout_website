@@ -32,7 +32,7 @@ export const reviewsData: Review[] = [
     stayDate: 'April 2026',
     cottageStayed: 'Grand Family Villa',
     cottageImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80',
-    comment: 'One of the best stays in Ooty! Everything was super clean, high quality, and staff was very polite and helpful. Highly recommended for couples and families alike.'
+    comment: 'One of the best stays at Hideout! Everything was super clean, high quality, and staff was very polite and helpful. Highly recommended for couples and families alike.'
   },
   {
     id: 'rev-4',

@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Color Palette - Ooty Mountain Retreat Theme */
+  /* Color Palette - Hideout Mountain Retreat Theme */
   --color-forest-deep: #0B1910;
   --color-forest-dark: #142E1F;
   --color-forest-medium: #1E422D;
@@ -172,15 +172,60 @@ h1, h2, h3, h4, .font-serif {
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-8px) rotate(1deg);
   }
 }
 
 .animate-float {
   animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #E5C158 0%, #FFF8D6 50%, #E5C158 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3.5s ease-in-out infinite;
 }
 
 /* Custom Scrollbar */

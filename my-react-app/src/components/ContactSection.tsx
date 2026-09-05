@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Send, MessageSquare, User, Calendar, ShieldCheck, Headphones, ArrowRight } from 'lucide-react';
 
 interface ContactSectionProps {
@@ -52,7 +53,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
         {/* Top Right Brand Tagline on Desktop Light Side */}
         <div className="hidden lg:flex justify-end mb-4 pr-4">
           <div className="text-right">
-            <div className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#142E1F]/70">Ooty Cottage</div>
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#142E1F]/70">Hideout</div>
             <div className="text-[9px] uppercase tracking-[0.2em] text-[#142E1F]/50 font-medium">Stay Close to Nature</div>
           </div>
         </div>
@@ -60,7 +61,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           
           {/* Left Column - Contact Info (4 cols) */}
-          <div className="lg:col-span-4 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-4 space-y-6"
+          >
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-[#E5B849] text-xs font-extrabold uppercase tracking-widest">GET IN TOUCH</span>
@@ -68,7 +75,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] leading-[1.15] font-bold font-serif text-white mb-4">
                 Plan Your Stay <br />
-                <span className="text-[#E5B849] italic font-normal font-serif">at Ooty Cottage</span>
+                <span className="text-[#E5B849] italic font-normal font-serif">at Hideout</span>
                 <span className="inline-block ml-2 text-2xl animate-pulse">🍃</span>
               </h2>
               <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
@@ -79,20 +86,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
             {/* Info Cards List (4 Glass Dark Pills) */}
             <div className="space-y-3">
               {/* Card 1: Location */}
-              <div className="flex items-center gap-3.5 p-3.5 rounded-[16px] bg-[#13281C]/90 border border-emerald-500/20 shadow-lg backdrop-blur-md hover:border-emerald-500/40 transition-all">
+              <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-3.5 p-3.5 rounded-[16px] bg-[#13281C]/90 border border-emerald-500/20 shadow-lg backdrop-blur-md hover:border-emerald-500/40 transition-all">
                 <div className="w-11 h-11 rounded-full bg-[#1C3B29] text-emerald-400 flex items-center justify-center shrink-0 shadow-inner">
                   <MapPin className="w-5 h-5 text-emerald-400" />
                 </div>
                 <div>
                   <div className="text-[10px] text-emerald-300/70 font-extrabold tracking-wider uppercase">RESORT LOCATION</div>
                   <div className="text-xs font-semibold text-white mt-0.5 leading-snug">
-                    Misty Valley Road, Fernhill, Ooty, Tamil Nadu 643004
+                    Misty Valley Road, Fernhill, Hideout, Tamil Nadu 643004
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Card 2: Phone */}
-              <div className="flex items-center gap-3.5 p-3.5 rounded-[16px] bg-[#13281C]/90 border border-emerald-500/20 shadow-lg backdrop-blur-md hover:border-emerald-500/40 transition-all">
+              <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-3.5 p-3.5 rounded-[16px] bg-[#13281C]/90 border border-emerald-500/20 shadow-lg backdrop-blur-md hover:border-emerald-500/40 transition-all">
                 <div className="w-11 h-11 rounded-full bg-[#1C3B29] text-emerald-400 flex items-center justify-center shrink-0 shadow-inner">
                   <Phone className="w-5 h-5 text-emerald-400" />
                 </div>
@@ -102,23 +109,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
                     +91 98765 43210 / +91 98765 43211
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Card 3: Email */}
-              <div className="flex items-center gap-3.5 p-3.5 rounded-[16px] bg-[#13281C]/90 border border-emerald-500/20 shadow-lg backdrop-blur-md hover:border-emerald-500/40 transition-all">
+              <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-3.5 p-3.5 rounded-[16px] bg-[#13281C]/90 border border-emerald-500/20 shadow-lg backdrop-blur-md hover:border-emerald-500/40 transition-all">
                 <div className="w-11 h-11 rounded-full bg-[#1C3B29] text-emerald-400 flex items-center justify-center shrink-0 shadow-inner">
                   <Mail className="w-5 h-5 text-emerald-400" />
                 </div>
                 <div>
                   <div className="text-[10px] text-emerald-300/70 font-extrabold tracking-wider uppercase">EMAIL INQUIRIES</div>
                   <div className="text-xs font-semibold text-white mt-0.5 leading-snug">
-                    stay@ootycottage.com
+                    stay@hideout.com
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Card 4: Hours */}
-              <div className="flex items-center gap-3.5 p-3.5 rounded-[16px] bg-[#13281C]/90 border border-emerald-500/20 shadow-lg backdrop-blur-md hover:border-emerald-500/40 transition-all">
+              <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-3.5 p-3.5 rounded-[16px] bg-[#13281C]/90 border border-emerald-500/20 shadow-lg backdrop-blur-md hover:border-emerald-500/40 transition-all">
                 <div className="w-11 h-11 rounded-full bg-[#1C3B29] text-emerald-400 flex items-center justify-center shrink-0 shadow-inner">
                   <Clock className="w-5 h-5 text-emerald-400" />
                 </div>
@@ -128,7 +135,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
                     Check-in: 12:00 PM | Check-out: 11:00 AM (24/7 Front Desk)
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Bottom Cursive Script Decor */}
@@ -140,10 +147,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
                 <path d="M 5 6 Q 40 1, 80 7 T 155 4" strokeLinecap="round" />
               </svg>
             </div>
-          </div>
+          </motion.div>
 
           {/* Center Column - Inquiry Form (5 cols) */}
-          <div className="lg:col-span-5 bg-white text-gray-900 rounded-[26px] p-6 sm:p-8 shadow-2xl border border-gray-100 relative z-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 bg-white text-gray-900 rounded-[26px] p-6 sm:p-8 shadow-2xl border border-gray-100 relative z-20"
+          >
             
             {/* Top Header Row */}
             <div className="flex items-start justify-between gap-4 mb-6">
@@ -238,14 +251,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
               </div>
 
               {/* Gold Action Button */}
-              <button
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 type="submit"
                 className="w-full py-4 px-6 rounded-[14px] bg-[#E5B849] hover:bg-[#D4A738] text-[#142E1F] font-extrabold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer group mt-2"
               >
                 <Send className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
                 <span>Submit Inquiry Now</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
+              </motion.button>
             </form>
 
             {/* Bottom Trust Badges (3 cols) */}
@@ -278,7 +293,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column - Overlapping Cottage Portrait Card (3 cols) */}
           <div className="lg:col-span-3 flex flex-col justify-between items-center lg:items-end space-y-6">
@@ -287,7 +302,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
             <div className="relative rounded-[26px] overflow-hidden border-4 border-white shadow-2xl h-[480px] lg:h-[520px] w-full max-w-[340px] group">
               <img 
                 src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=1000" 
-                alt="Ooty Cottage Dusk View"
+                alt="Hideout Dusk View"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

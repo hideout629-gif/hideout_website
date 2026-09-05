@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
@@ -27,15 +28,22 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full dark-glass-nav border-b border-white/10 shadow-2xl transition-all duration-300">
+    <motion.nav 
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed top-0 left-0 right-0 z-50 w-full dark-glass-nav border-b border-white/10 shadow-2xl transition-all duration-300"
+    >
       <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-10 md:px-14 lg:px-16 py-5 md:py-6 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <button 
+        <motion.button 
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
           onClick={() => handleNavClick('home')} 
           className="flex items-center gap-3.5 group text-left focus:outline-none cursor-pointer"
         >
-          <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl border border-[#E5C158]/50 bg-emerald-950/60 flex items-center justify-center p-2 shadow-inner group-hover:scale-105 transition-transform">
+          <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl border border-[#E5C158]/50 bg-emerald-950/60 flex items-center justify-center p-2 shadow-inner group-hover:border-[#E5C158] transition-colors">
             <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#E5C158]" stroke="currentColor" strokeWidth="1.5">
               <path d="M12 2L3 9v11a1 1 0 001 1h16a1 1 0 001-1V9l-9-7z" fill="none"/>
               <path d="M12 7l6 5v7H6v-7l6-5z" fill="rgba(229,193,88,0.15)"/>
@@ -46,13 +54,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
           </div>
           <div>
             <div className="font-serif text-xl md:text-2xl font-bold text-white tracking-wide leading-tight group-hover:text-[#E5C158] transition-colors">
-              Ooty Cottage
+              Hideout
             </div>
             <div className="text-[10px] md:text-[11px] uppercase tracking-[0.22em] font-semibold text-[#E5C158]/90">
               Stay Close to Nature
             </div>
           </div>
-        </button>
+        </motion.button>
 
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex items-center gap-10">
@@ -68,7 +76,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E5C158] rounded-full shadow-[0_0_8px_#E5C158]" />
+                  <motion.span 
+                    layoutId="activeNavIndicator"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E5C158] rounded-full shadow-[0_0_8px_#E5C158]" 
+                  />
                 )}
               </button>
             );
@@ -77,7 +89,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
 
         {/* Desktop Right Phone */}
         <div className="hidden md:flex items-center gap-6">
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="tel:+919876543210"
             className="flex items-center gap-2.5 text-base font-medium text-white/90 hover:text-[#E5C158] transition-colors"
           >
@@ -85,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
               <Phone className="w-4 h-4" />
             </div>
             <span className="font-medium tracking-wide">+91 98765 43210</span>
-          </a>
+          </motion.a>
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -101,35 +115,43 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
       </div>
 
       {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden mx-4 mb-4 dark-glass rounded-xl p-5 shadow-2xl border border-white/20 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-200">
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => handleNavClick(link.id)}
-              className={`text-left py-2.5 px-3.5 rounded-xl text-base font-semibold transition-colors ${
-                activeSection === link.id
-                  ? 'bg-[#E5C158]/20 text-[#E5C158]'
-                  : 'text-white/90 hover:bg-white/10'
-              }`}
-            >
-              {link.name}
-            </button>
-          ))}
-          
-          <div className="pt-3 border-t border-white/10 flex flex-col gap-3">
-            <a
-              href="tel:+919876543210"
-              className="flex items-center gap-3 text-base font-medium text-white/90 py-1"
-            >
-              <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#E5C158]">
-                <Phone className="w-4 h-4" />
-              </div>
-              <span>+91 98765 43210</span>
-            </a>
-          </div>
-        </div>
-      )}
-    </nav>
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20, height: 0 }}
+            animate={{ opacity: 1, y: 0, height: "auto" }}
+            exit={{ opacity: 0, y: -20, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden mx-4 mb-4 dark-glass rounded-xl p-5 shadow-2xl border border-white/20 flex flex-col gap-4 overflow-hidden"
+          >
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => handleNavClick(link.id)}
+                className={`text-left py-2.5 px-3.5 rounded-xl text-base font-semibold transition-colors ${
+                  activeSection === link.id
+                    ? 'bg-[#E5C158]/20 text-[#E5C158]'
+                    : 'text-white/90 hover:bg-white/10'
+                }`}
+              >
+                {link.name}
+              </button>
+            ))}
+            
+            <div className="pt-3 border-t border-white/10 flex flex-col gap-3">
+              <a
+                href="tel:+919876543210"
+                className="flex items-center gap-3 text-base font-medium text-white/90 py-1"
+              >
+                <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#E5C158]">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <span>+91 98765 43210</span>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };

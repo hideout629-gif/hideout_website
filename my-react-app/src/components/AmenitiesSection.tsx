@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   Wifi, 
   Flame, 
@@ -95,7 +96,14 @@ export const AmenitiesSection: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
         
         {/* Top Header Row with 3 Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-10 md:mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: '28px' }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
+        >
           
           {/* Left Side Feature Tag List */}
           <div className="lg:col-span-3 hidden lg:flex flex-col space-y-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#5B826D] border-l-2 border-gray-300/60 pl-4">
@@ -132,14 +140,19 @@ export const AmenitiesSection: React.FC = () => {
             </svg>
           </div>
 
-        </div>
+        </motion.div>
 
-        {/* 8 Amenities Cards Grid (4 Columns across) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-10 md:mb-12">
+        {/* 8 Amenities Cards Grid (4 Columns across, row-gap: 28px) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 w-full" style={{ rowGap: '28px' }}>
           {amenitiesList.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              whileHover={{ y: -8 }}
+              className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group"
             >
               {/* Image Portion with Dark Green Badge Box */}
               <div className="relative h-48 overflow-hidden shrink-0">
@@ -151,9 +164,12 @@ export const AmenitiesSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10" />
 
                 {/* Bottom Left Dark Green Icon Badge */}
-                <div className="absolute bottom-3.5 left-3.5 w-10 h-10 rounded-[12px] bg-[#0E2C20] text-white flex items-center justify-center shadow-md z-10 border border-white/30">
+                <motion.div 
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  className="absolute bottom-3.5 left-3.5 w-10 h-10 rounded-[12px] bg-[#0E2C20] text-white flex items-center justify-center shadow-md z-10 border border-white/30"
+                >
                   {item.icon}
-                </div>
+                </motion.div>
               </div>
 
               {/* Card Body Content - Explicit padding: 20px */}
@@ -172,13 +188,17 @@ export const AmenitiesSection: React.FC = () => {
 
                 {/* Bottom Right Arrow Button */}
                 <div className="pt-2 flex items-center justify-end">
-                  <button className="w-8 h-8 rounded-full bg-[#E0F2E9] text-[#0E2C20] group-hover:bg-[#0E2C20] group-hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm">
+                  <motion.button 
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-8 h-8 rounded-full bg-[#E0F2E9] text-[#0E2C20] group-hover:bg-[#0E2C20] group-hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"
+                  >
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </motion.button>
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

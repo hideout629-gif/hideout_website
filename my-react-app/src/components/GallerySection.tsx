@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, LayoutGrid, Home, Bed, Mountain, Utensils, Heart, ArrowRight, TreePine } from 'lucide-react';
 import { galleryData } from '../data/galleryData';
 import type { GalleryItem } from '../types';
@@ -82,7 +83,14 @@ export const GallerySection: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
         
         {/* Top Header Row with Title & Handwritten Script Accent */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-8 md:mb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: '32px' }}
+          className="gallery-description grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
+        >
           
           {/* Left Main Title & Subtitle */}
           <div className="lg:col-span-8 space-y-3">
@@ -101,7 +109,7 @@ export const GallerySection: React.FC = () => {
             </h2>
 
             <p className="text-sm md:text-base text-gray-600 max-w-2xl leading-relaxed font-sans">
-              Take a peak into life at Ooty Cottage — from misty mornings on private balconies to cozy evenings by the fireplace.
+              Take a peak into life at Hideout — from misty mornings on private balconies to cozy evenings by the fireplace.
             </p>
           </div>
 
@@ -115,15 +123,20 @@ export const GallerySection: React.FC = () => {
             </svg>
           </div>
 
-        </div>
+        </motion.div>
 
         {/* Category Filter Pills Row */}
-        <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-7 sm:mb-8">
+        <div 
+          style={{ marginBottom: '28px' }}
+          className="gallery-filters flex flex-wrap items-center gap-3 md:gap-4"
+        >
           {categories.map((cat) => {
             const isActive = activeCategory === cat.id;
             return (
-              <button
+              <motion.button
                 key={cat.id}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
                 onClick={() => setActiveCategory(cat.id)}
                 style={{ padding: '12px 26px' }}
                 className={`flex items-center gap-3 rounded-full text-sm sm:text-base font-semibold transition-all cursor-pointer border ${
@@ -143,86 +156,32 @@ export const GallerySection: React.FC = () => {
                     {cat.count}
                   </span>
                 )}
-              </button>
+              </motion.button>
             );
           })}
         </div>
 
         {/* Photo Gallery Grid Container */}
-        <div className="space-y-6 mb-8 md:mb-10">
-          
-          {/* Top Row: 3 Large Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-            {topRowItems.map((item, index) => {
-              const isLiked = !!likedMap[item.id];
-              return (
-                <div
-                  key={item.id}
-                  onClick={() => setSelectedItem(item)}
-                  className="group relative rounded-[22px] overflow-hidden h-72 sm:h-80 cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-gray-200/80 bg-white"
-                >
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20" />
-
-                  {/* Top Left Category Pill */}
-                  <div className="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[#0E2C20] shadow-md flex items-center gap-1.5 z-10">
-                    {getCategoryIcon(item.category)}
-                    <span>{getCategoryLabel(item.category)}</span>
-                  </div>
-
-                  {/* Top Right Heart Favorite Button */}
-                  <button
-                    onClick={(e) => toggleLike(e, item.id)}
-                    className={`absolute top-3.5 right-3.5 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${
-                      isLiked 
-                        ? 'bg-red-500 text-white border border-red-400 shadow-md' 
-                        : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
-                    }`}
-                    title="Favorite photo"
-                  >
-                    <Heart className={`w-4 h-4 ${isLiked ? 'fill-white' : ''}`} />
-                  </button>
-
-                  {/* Bottom Content Info */}
-                  <div className="absolute bottom-4 left-5 right-5 text-white flex items-end justify-between z-10">
-                    <div className="space-y-1 max-w-[80%]">
-                      {index === 0 && (
-                        <div className="text-[10px] uppercase tracking-widest font-extrabold text-[#FFC843]">
-                          — FEATURED
-                        </div>
-                      )}
-                      <h3 className="text-lg sm:text-xl font-bold font-serif leading-tight text-white">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs text-gray-200 line-clamp-1 font-sans opacity-90">
-                        {item.caption}
-                      </p>
-                    </div>
-
-                    {/* Circular Action Button */}
-                    <div className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white group-hover:bg-[#0E2C20] group-hover:border-[#0E2C20] flex items-center justify-center transition-all cursor-pointer shrink-0 shadow-md">
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Bottom Row: 4 Cards Across */}
-          {bottomRowItems.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-              {bottomRowItems.map((item) => {
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={activeCategory}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+            className="space-y-6"
+          >
+            
+            {/* Top Row: 3 Large Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+              {topRowItems.map((item, index) => {
                 const isLiked = !!likedMap[item.id];
                 return (
-                  <div
+                  <motion.div
                     key={item.id}
+                    whileHover={{ y: -8 }}
                     onClick={() => setSelectedItem(item)}
-                    className="group relative rounded-[22px] overflow-hidden h-64 cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-gray-200/80 bg-white"
+                    className="group relative rounded-[22px] overflow-hidden h-72 sm:h-80 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200/80 bg-white"
                   >
                     <img
                       src={item.imageUrl}
@@ -238,7 +197,9 @@ export const GallerySection: React.FC = () => {
                     </div>
 
                     {/* Top Right Heart Favorite Button */}
-                    <button
+                    <motion.button
+                      whileHover={{ scale: 1.15 }}
+                      whileTap={{ scale: 0.9 }}
                       onClick={(e) => toggleLike(e, item.id)}
                       className={`absolute top-3.5 right-3.5 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${
                         isLiked 
@@ -248,34 +209,104 @@ export const GallerySection: React.FC = () => {
                       title="Favorite photo"
                     >
                       <Heart className={`w-4 h-4 ${isLiked ? 'fill-white' : ''}`} />
-                    </button>
+                    </motion.button>
 
                     {/* Bottom Content Info */}
                     <div className="absolute bottom-4 left-5 right-5 text-white flex items-end justify-between z-10">
-                      <div className="space-y-1 max-w-[78%]">
-                        <h3 className="text-base sm:text-lg font-bold font-serif leading-snug text-white">
+                      <div className="space-y-1 max-w-[80%]">
+                        {index === 0 && (
+                          <div className="text-[10px] uppercase tracking-widest font-extrabold text-[#FFC843]">
+                            — FEATURED
+                          </div>
+                        )}
+                        <h3 className="text-lg sm:text-xl font-bold font-serif leading-tight text-white">
                           {item.title}
                         </h3>
-                        <p className="text-[11px] text-gray-200 line-clamp-1 font-sans opacity-90">
+                        <p className="text-xs text-gray-200 line-clamp-1 font-sans opacity-90">
                           {item.caption}
                         </p>
                       </div>
 
                       {/* Circular Action Button */}
-                      <div className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white group-hover:bg-[#0E2C20] group-hover:border-[#0E2C20] flex items-center justify-center transition-all cursor-pointer shrink-0 shadow-md">
-                        <ArrowRight className="w-3.5 h-3.5" />
+                      <div className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white group-hover:bg-[#0E2C20] group-hover:border-[#0E2C20] flex items-center justify-center transition-all cursor-pointer shrink-0 shadow-md">
+                        <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Bottom Row: 4 Cards Across */}
+            {bottomRowItems.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                {bottomRowItems.map((item) => {
+                  const isLiked = !!likedMap[item.id];
+                  return (
+                    <motion.div
+                      key={item.id}
+                      whileHover={{ y: -8 }}
+                      onClick={() => setSelectedItem(item)}
+                      className="group relative rounded-[22px] overflow-hidden h-64 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200/80 bg-white"
+                    >
+                      <img
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20" />
+
+                      {/* Top Left Category Pill */}
+                      <div className="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[#0E2C20] shadow-md flex items-center gap-1.5 z-10">
+                        {getCategoryIcon(item.category)}
+                        <span>{getCategoryLabel(item.category)}</span>
+                      </div>
+
+                      {/* Top Right Heart Favorite Button */}
+                      <motion.button
+                        whileHover={{ scale: 1.15 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={(e) => toggleLike(e, item.id)}
+                        className={`absolute top-3.5 right-3.5 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${
+                          isLiked 
+                            ? 'bg-red-500 text-white border border-red-400 shadow-md' 
+                            : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
+                        }`}
+                        title="Favorite photo"
+                      >
+                        <Heart className={`w-4 h-4 ${isLiked ? 'fill-white' : ''}`} />
+                      </motion.button>
+
+                      {/* Bottom Content Info */}
+                      <div className="absolute bottom-4 left-5 right-5 text-white flex items-end justify-between z-10">
+                        <div className="space-y-1 max-w-[78%]">
+                          <h3 className="text-base sm:text-lg font-bold font-serif leading-snug text-white">
+                            {item.title}
+                          </h3>
+                          <p className="text-[11px] text-gray-200 line-clamp-1 font-sans opacity-90">
+                            {item.caption}
+                          </p>
+                        </div>
+
+                        {/* Circular Action Button */}
+                        <div className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white group-hover:bg-[#0E2C20] group-hover:border-[#0E2C20] flex items-center justify-center transition-all cursor-pointer shrink-0 shadow-md">
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </div>
+                      </div>
+                    </motion.div>
                 );
               })}
             </div>
           )}
 
-        </div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Section Bottom Footer Controls */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full pt-2">
+        <div 
+          style={{ marginTop: '28px' }}
+          className="gallery-actions flex flex-col sm:flex-row items-center justify-between gap-4 w-full pt-2"
+        >
           
           {/* Left Decorative Line & Text */}
           <div className="flex items-center gap-2 text-left">
@@ -304,7 +335,7 @@ export const GallerySection: React.FC = () => {
               <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#5B826D] leading-tight">
-              OOTY COTTAGE<br />
+              HIDEOUT<br />
               <span className="text-gray-400 font-normal">STAY CLOSE TO NATURE</span>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Mountain, Flame, Trees, Utensils, Heart, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { experiencesData } from '../data/experiencesData';
 
@@ -58,7 +59,14 @@ export const ExperiencesSection: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
         
         {/* Top Header Row with 3 Columns: Left Navigation List, Center Title, Right Script Accent */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-10 md:mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: '32px' }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center"
+        >
           
           {/* Left Side Category Navigation Tag List */}
           <div className="lg:col-span-3 hidden lg:flex flex-col space-y-2 text-xs font-bold uppercase tracking-[0.25em] text-gray-500 border-l-2 border-gray-300/60 pl-4">
@@ -97,16 +105,21 @@ export const ExperiencesSection: React.FC = () => {
             </svg>
           </div>
 
-        </div>
+        </motion.div>
 
         {/* 4 Experience Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-10 md:mb-12">
-          {experiencesData.map((item) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+          {experiencesData.map((item, idx) => {
             const isLiked = !!likedMap[item.id];
             return (
-              <div
+              <motion.div
                 key={item.id}
-                className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group"
               >
                 {/* Image Portion with Overlay Badges */}
                 <div className="relative h-60 overflow-hidden shrink-0">
@@ -118,7 +131,9 @@ export const ExperiencesSection: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
 
                   {/* Top Right Heart Favorite Icon */}
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.15 }}
+                    whileTap={{ scale: 0.9 }}
                     onClick={() => toggleLike(item.id)}
                     className={`absolute top-3.5 right-3.5 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${
                       isLiked 
@@ -128,7 +143,7 @@ export const ExperiencesSection: React.FC = () => {
                     title="Favorite experience"
                   >
                     <Heart className={`w-4 h-4 ${isLiked ? 'fill-white' : ''}`} />
-                  </button>
+                  </motion.button>
 
                   {/* Bottom Left Category Icon Badge */}
                   <div className={`absolute bottom-3.5 left-3.5 w-10 h-10 rounded-[12px] ${getBadgeBg(item.icon)} backdrop-blur-md border flex items-center justify-center shadow-md z-10`}>
@@ -165,38 +180,44 @@ export const ExperiencesSection: React.FC = () => {
                       <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
 
-                    <button className="w-8 h-8 rounded-full bg-[#E0F2E9] text-[#0E2C20] hover:bg-[#0E2C20] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm">
+                    <motion.button 
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-8 h-8 rounded-full bg-[#E0F2E9] text-[#0E2C20] hover:bg-[#0E2C20] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"
+                    >
                       <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Section Bottom Controls Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full" style={{ marginTop: '28px' }}>
           {/* Left Placeholder for Balance */}
           <div className="hidden sm:block w-32" />
 
           {/* Center Action Controls */}
           <div className="flex items-center gap-3">
-            <button className="w-10 h-10 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
+            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-10 h-10 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
               <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button className="w-10 h-10 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
+            </motion.button>
+            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-10 h-10 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
               <ChevronRight className="w-5 h-5" />
-            </button>
+            </motion.button>
 
-            <button 
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               style={{ padding: '12px 28px' }}
               className="bg-[#0E2C20] hover:bg-[#184F39] text-white text-xs font-bold rounded-full flex items-center gap-2 shadow-md transition-all cursor-pointer"
             >
               <span className="text-sm">🍃</span>
               <span>View All Experiences</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1" />
-            </button>
+            </motion.button>
           </div>
 
           {/* Right Mountain Vector Doodle & Tagline */}

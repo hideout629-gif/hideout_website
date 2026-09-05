@@ -13,14 +13,14 @@ export const galleryData: GalleryItem[] = [
     title: 'Balcony Valley View',
     category: 'views',
     imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80',
-    caption: 'Morning mist floating softly over Ooty tea gardens.'
+    caption: 'Morning mist floating softly over Hideout tea gardens.'
   },
   {
     id: 'gal-3',
     title: 'Cozy Fireplace Interior',
     category: 'interiors',
     imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80',
-    caption: 'Warm stone fireplace lounge for chilly Ooty evenings.'
+    caption: 'Warm stone fireplace lounge for chilly Hideout evenings.'
   },
   {
     id: 'gal-4',

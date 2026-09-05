@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Star, Users, Bed, Maximize, ArrowRight, Heart, MapPin } from 'lucide-react';
 import type { Cottage } from '../types';
 import { formatCurrency } from '../utils/formatters';
@@ -12,7 +13,14 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
   const [isLiked, setIsLiked] = useState(false);
 
   return (
-    <div className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group">
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full group"
+    >
       {/* Image Container with Badges and Overlay Info */}
       <div className="relative h-64 overflow-hidden shrink-0">
         <img
@@ -35,7 +43,9 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
         )}
 
         {/* Top Right Heart/Favorite Icon */}
-        <button
+        <motion.button
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
           onClick={(e) => {
             e.stopPropagation();
             setIsLiked(!isLiked);
@@ -48,7 +58,7 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
           title="Save to favorites"
         >
           <Heart className={`w-4.5 h-4.5 ${isLiked ? 'fill-white' : ''}`} />
-        </button>
+        </motion.button>
 
         {/* Bottom Image Overlay Info */}
         <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-xs font-bold">
@@ -60,7 +70,7 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
 
           <div className="flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-gray-100">
             <MapPin className="w-3.5 h-3.5 text-[#FFC843]" />
-            <span>{cottage.location || 'Ooty, Tamil Nadu'}</span>
+            <span>{cottage.location || 'Hideout, Tamil Nadu'}</span>
           </div>
         </div>
       </div>
@@ -132,16 +142,18 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
             </div>
           </div>
 
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => onSelectDetail(cottage)}
             style={{ padding: '14px 34px' }}
-            className="bg-[#0E2C20] hover:bg-[#184F39] text-white font-bold text-xs rounded-full transition-all flex items-center gap-2.5 cursor-pointer shadow-md hover:shadow-lg hover:scale-105 shrink-0 whitespace-nowrap"
+            className="bg-[#0E2C20] hover:bg-[#184F39] text-white font-bold text-xs rounded-full transition-all flex items-center gap-2.5 cursor-pointer shadow-md hover:shadow-lg shrink-0 whitespace-nowrap"
           >
             <span>View Details</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          </motion.button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Play,
   LayoutGrid,
@@ -75,7 +76,14 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
 
         {/* Top Section Header Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-8 md:mb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: '32px' }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
+        >
 
           {/* Left Title & Description */}
           <div className="lg:col-span-8 space-y-3">
@@ -120,27 +128,33 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
             </div>
 
             {/* Watch Story Pill Button */}
-            <button className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 shadow-sm hover:shadow-md text-xs font-bold text-[#0E281C] hover:bg-white transition-all cursor-pointer">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 shadow-sm hover:shadow-md text-xs font-bold text-[#0E281C] hover:bg-white transition-all cursor-pointer"
+            >
               <div className="w-7 h-7 rounded-full bg-[#242726] text-white flex items-center justify-center shadow-inner">
                 <Play className="w-3 h-3 fill-white ml-0.5" />
               </div>
               <span>Watch Our Story</span>
-            </button>
+            </motion.button>
 
           </div>
 
-        </div>
+        </motion.div>
 
         {/* Category Filter Row */}
-        <div className="w-full flex flex-wrap items-center justify-between gap-4 mb-7 sm:mb-8">
+        <div className="w-full flex flex-wrap items-center justify-between gap-4">
 
           {/* Category Filter Pills */}
           <div className="flex flex-wrap items-center gap-3 md:gap-4">
             {categories.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
-                <button
+                <motion.button
                   key={tab.id}
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
                   onClick={() => setActiveTab(tab.id)}
                   style={{ padding: '14px 28px' }}
                   className={`flex items-center gap-3.5 rounded-full text-sm sm:text-base font-semibold transition-all cursor-pointer border ${isActive
@@ -156,7 +170,7 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
                     }`}>
                     {tab.count}
                   </span>
-                </button>
+                </motion.button>
               );
             })}
           </div>
@@ -164,15 +178,25 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
         </div>
 
         {/* Cottages Grid (4 Cards Row) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          {filteredCottages.map((cottage) => (
-            <CottageCard
-              key={cottage.id}
-              cottage={cottage}
-              onSelectDetail={onSelectDetail}
-            />
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+            style={{ marginTop: '28px' }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
+          >
+            {filteredCottages.map((cottage) => (
+              <CottageCard
+                key={cottage.id}
+                cottage={cottage}
+                onSelectDetail={onSelectDetail}
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
       </div>
     </section>

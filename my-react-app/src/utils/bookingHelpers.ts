@@ -43,6 +43,6 @@ export function generateWhatsAppBookingUrl(
   checkOut: string,
   guests: number
 ): string {
-  const message = `Hello Ooty Cottage! 🌲\nI want to book *${cottageName}*\nCheck-in: ${checkIn}\nCheck-out: ${checkOut}\nGuests: ${guests}\nPlease confirm availability and details.`;
+  const message = `Hello Hideout! 🌲\nI want to book *${cottageName}*\nCheck-in: ${checkIn}\nCheck-out: ${checkOut}\nGuests: ${guests}\nPlease confirm availability and details.`;
   return `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
 }
