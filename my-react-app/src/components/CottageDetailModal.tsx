@@ -18,20 +18,20 @@ export const CottageDetailModal: React.FC<CottageDetailModalProps> = ({
   return (
     <AnimatePresence>
       {cottage && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 overflow-y-auto"
         >
-          <motion.div 
+          <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="bg-white text-gray-900 rounded-3xl max-w-4xl w-full p-6 md:p-8 shadow-2xl border border-gray-100 relative my-8 max-h-[90vh] overflow-y-auto"
           >
-            
+
             {/* Close Button */}
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -44,7 +44,7 @@ export const CottageDetailModal: React.FC<CottageDetailModalProps> = ({
 
             {/* Modal Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              
+
               {/* Left Column: Photo Gallery Preview */}
               <div className="lg:col-span-6 space-y-4">
                 <div className="h-72 md:h-80 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
@@ -62,9 +62,8 @@ export const CottageDetailModal: React.FC<CottageDetailModalProps> = ({
                       key={idx}
                       whileHover={{ scale: 1.05 }}
                       onClick={() => setActiveImage(imgUrl)}
-                      className={`h-16 rounded-xl overflow-hidden cursor-pointer border-2 transition-all ${
-                        (activeImage || cottage.featuredImage) === imgUrl ? 'border-[#142E1F] scale-95' : 'border-transparent opacity-70 hover:opacity-100'
-                      }`}
+                      className={`h-16 rounded-xl overflow-hidden cursor-pointer border-2 transition-all ${(activeImage || cottage.featuredImage) === imgUrl ? 'border-[#142E1F] scale-95' : 'border-transparent opacity-70 hover:opacity-100'
+                        }`}
                     >
                       <img src={imgUrl} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
                     </motion.div>
@@ -100,8 +99,8 @@ export const CottageDetailModal: React.FC<CottageDetailModalProps> = ({
                       {cottage.category} Collection
                     </span>
                     <span className="text-gray-300">•</span>
-                    <div className="flex items-center gap-1 text-xs font-bold text-gray-800">
-                      <Star className="w-3.5 h-3.5 fill-[#E5C158] text-[#E5C158]" />
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-gray-800">
+                      <Star className="w-5 h-5 fill-[#E5C158] text-[#E5C158] drop-shadow-[0_0_4px_rgba(229,193,88,0.6)] shrink-0" />
                       <span>{cottage.rating} ({cottage.reviewsCount} reviews)</span>
                     </div>
                   </div>

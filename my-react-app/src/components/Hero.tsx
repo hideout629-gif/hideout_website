@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
       <div className="relative z-10 w-full max-w-[1750px] mx-auto my-auto flex-1 flex flex-col justify-center gap-6 xl:gap-10 py-4 sm:py-6" style={{ paddingLeft: 'clamp(2rem, 5vw, 6rem)', paddingRight: 'clamp(2rem, 5vw, 6rem)' }}>
 
         {/* Top Hero Section: Badge, Headline, Paragraph, Buttons */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -102,7 +102,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
         >
 
           {/* Top Pill Badge */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -113,7 +113,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           </motion.div>
 
           {/* Headline */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -127,7 +127,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           </motion.h1>
 
           {/* Subtitle Paragraph */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -137,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           </motion.p>
 
           {/* Action Buttons Row */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -158,11 +158,11 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
               whileTap={{ scale: 0.96 }}
               onClick={() => setIsVideoOpen(true)}
-              className="h-12 sm:h-13 bg-white/10 border border-white/30 text-white font-bold rounded-full text-base backdrop-blur-md flex items-center gap-3 cursor-pointer group"
-              style={{ paddingLeft: '14px', paddingRight: '24px' }}
+              className="bg-white/10 border border-white/30 text-white font-bold rounded-full text-base backdrop-blur-md flex items-center gap-3 cursor-pointer group"
+              style={{ padding: '12px 24px 12px 12px' }}
             >
-              <div className="w-6 h-6 rounded-full bg-white text-[#0B1910] flex items-center justify-center pl-0.5 group-hover:scale-110 transition-transform shrink-0 my-auto shadow-md">
-                <Play className="w-3 h-3 fill-[#0B1910] text-[#0B1910]" />
+              <div className="w-7 h-7 rounded-full bg-white text-[#0B1910] flex items-center justify-center pl-0.5 group-hover:scale-110 transition-transform shrink-0 my-auto shadow-md">
+                <Play className="w-3.5 h-3.5 fill-[#0B1910] text-[#0B1910]" />
               </div>
               <span>Watch Video</span>
             </motion.button>
@@ -171,7 +171,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
         </motion.div>
 
         {/* Bottom Hero Section: Highlights Grid & Rating (Left) */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
@@ -182,37 +182,40 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           <div className="flex flex-col gap-5 xl:gap-6 max-w-4xl">
 
             {/* Highlights Grid with Dividers */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-4 sm:p-5.5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 w-full shadow-2xl">
-              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 border-r border-white/15 transition-transform">
-                <div className="p-2.5 sm:p-3 rounded-xl bg-[#E5C158]/20 text-[#E5C158] shrink-0 shadow-inner">
-                  <Mountain className="w-5.5 h-5.5 sm:w-6.5 sm:h-6.5" />
+            <div
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 rounded-2xl sm:rounded-full bg-black/40 backdrop-blur-md border border-white/15 w-full shadow-2xl items-center"
+              style={{ padding: '20px', minHeight: '84px' }}
+            >
+              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 border-r border-white/20 transition-transform h-full">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                  <Mountain className="w-5 h-5" />
                 </div>
                 <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
                   Breathtaking<br />Valley Views
                 </span>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 sm:border-r border-white/15 transition-transform">
-                <div className="p-2.5 sm:p-3 rounded-xl bg-[#E5C158]/20 text-[#E5C158] shrink-0 shadow-inner">
-                  <Leaf className="w-5.5 h-5.5 sm:w-6.5 sm:h-6.5" />
+              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 sm:border-r border-white/20 transition-transform h-full">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                  <Leaf className="w-5 h-5" />
                 </div>
                 <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
                   Luxury Wooden<br />Cottages
                 </span>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 border-r border-white/15 transition-transform">
-                <div className="p-2.5 sm:p-3 rounded-xl bg-[#E5C158]/20 text-[#E5C158] shrink-0 shadow-inner">
-                  <Coffee className="w-5.5 h-5.5 sm:w-6.5 sm:h-6.5" />
+              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 border-r border-white/20 transition-transform h-full">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                  <Coffee className="w-5 h-5" />
                 </div>
                 <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
                   Authentic Tea<br />Experience
                 </span>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 transition-transform">
-                <div className="p-2.5 sm:p-3 rounded-xl bg-[#E5C158]/20 text-[#E5C158] shrink-0 shadow-inner">
-                  <Heart className="w-5.5 h-5.5 sm:w-6.5 sm:h-6.5" />
+              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 transition-transform h-full">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                  <Heart className="w-5 h-5" />
                 </div>
                 <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
                   320+<br />Happy Guests
@@ -220,48 +223,62 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
               </motion.div>
             </div>
 
-            {/* Rating & Avatar Stack */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-              <div className="flex -space-x-3 overflow-hidden">
-                <img
-                  className="inline-block h-10 sm:h-11 w-10 sm:w-11 rounded-full ring-2 ring-[#0B1910] object-cover hover:scale-110 transition-transform cursor-pointer"
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
-                  alt="Guest Avatar 1"
-                />
-                <img
-                  className="inline-block h-10 sm:h-11 w-10 sm:w-11 rounded-full ring-2 ring-[#0B1910] object-cover hover:scale-110 transition-transform cursor-pointer"
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
-                  alt="Guest Avatar 2"
-                />
-                <img
-                  className="inline-block h-10 sm:h-11 w-10 sm:w-11 rounded-full ring-2 ring-[#0B1910] object-cover hover:scale-110 transition-transform cursor-pointer"
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
-                  alt="Guest Avatar 3"
-                />
-                <img
-                  className="inline-block h-10 sm:h-11 w-10 sm:w-11 rounded-full ring-2 ring-[#0B1910] object-cover hover:scale-110 transition-transform cursor-pointer"
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
-                  alt="Guest Avatar 4"
-                />
-                <div className="flex items-center justify-center h-10 sm:h-11 w-10 sm:w-11 rounded-full ring-2 ring-[#0B1910] bg-[#1E422D] text-xs font-extrabold text-[#E5C158] border border-[#E5C158]/40">
-                  +317
+            {/* Unique Animated Rating Badge (No Images) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ scale: 1.03, y: -2 }}
+              className="w-fit inline-flex items-center gap-5 sm:gap-6 rounded-full bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-xl border border-[#E5C158]/40 shadow-[0_10px_35px_rgba(0,0,0,0.7),0_0_25px_rgba(229,193,88,0.2)] group cursor-pointer"
+              style={{ padding: '20px', minHeight: '92px' }}
+            >
+              {/* Score & Stars Section */}
+              <div className="flex items-center gap-4">
+                <div className="relative flex items-center justify-center w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#E5C158]/15 border-2 border-[#E5C158]/60 text-[#E5C158] font-bold text-xl shadow-inner group-hover:scale-110 group-hover:border-[#E5C158] group-hover:shadow-[0_0_20px_rgba(229,193,88,0.6)] transition-all duration-300">
+                  <span className="font-serif">4.9</span>
+                  <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E5C158] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#E5C158]"></span>
+                  </span>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  {/* Staggered One-by-One Rotating Stars */}
+                  <div className="flex items-center gap-1.5">
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        animate={{ rotate: [0, 360] }}
+                        transition={{
+                          duration: 1.4,
+                          repeat: Infinity,
+                          repeatDelay: 3.2,
+                          delay: i * 0.6,
+                          ease: "easeInOut"
+                        }}
+                        whileHover={{ scale: 1.3 }}
+                      >
+                        <Star className="w-5.5 h-5.5 sm:w-6 sm:h-6 fill-[#E5C158] text-[#E5C158] drop-shadow-[0_0_8px_rgba(229,193,88,0.85)]" />
+                      </motion.div>
+                    ))}
+                    <span className="ml-2 text-xs font-extrabold text-[#E5C158] uppercase tracking-widest">Top Rated</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-200 font-medium">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>320+ Verified Guest Reviews</span>
+                  </div>
                 </div>
               </div>
 
-              <div>
-                <div className="flex items-center gap-2">
-                  <div className="flex text-[#E5C158]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#E5C158] text-[#E5C158]" />
-                    ))}
-                  </div>
-                  <span className="font-bold text-white text-base sm:text-lg">4.9 / 5.0</span>
-                </div>
-                <div className="text-xs text-gray-300 font-medium">
-                  From 320+ guest reviews
+              {/* Decorative Accent Badge */}
+              <div className="hidden sm:flex items-center justify-center pl-5 border-l border-white/20">
+                <div className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-200 tracking-wider flex items-center gap-2 group-hover:bg-[#E5C158]/20 group-hover:text-[#E5C158] transition-colors">
+                  <Sparkles className="w-4 h-4 text-[#E5C158] animate-spin" style={{ animationDuration: '8s' }} />
+                  <span>5-Star Hospitality</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 
@@ -291,13 +308,13 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
       {/* Video Modal Player */}
       <AnimatePresence>
         {isVideoOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-8"
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}

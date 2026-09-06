@@ -1,5 +1,3 @@
-import type { Review } from '../types';
-
 export const reviewsData: Review[] = [
   {
     id: 'rev-1',
@@ -44,5 +42,27 @@ export const reviewsData: Review[] = [
     cottageStayed: 'Misty Pines Honeymoon Suite',
     cottageImage: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80',
     comment: 'Celebrated our anniversary here! The private jacuzzi under the starry sky and the candlelight dinner exceeded our expectations. Pure luxury in nature.'
+  },
+  {
+    id: 'rev-5',
+    name: 'Vikram & Ananya',
+    location: 'Mumbai, Maharashtra',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+    stayDate: 'February 2026',
+    cottageStayed: 'Valley View Executive Suite',
+    cottageImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+    comment: 'An absolute haven of peace. The morning nature walk guide was super knowledgeable and the fresh local breakfast on our terrace was out of this world!'
+  },
+  {
+    id: 'rev-6',
+    name: 'Kavitha & Family',
+    location: 'Kochi, Kerala',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+    stayDate: 'January 2026',
+    cottageStayed: 'Pine Sanctuary Family Villa',
+    cottageImage: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80',
+    comment: 'Our kids loved the open bonfire, marshmallow roasting, and forest trails. The rooms are incredibly warm, cozy, and beautifully decorated.'
   }
 ];

@@ -8,8 +8,7 @@ import {
   ShieldCheck, 
   Clock, 
   Sparkles,
-  Bath,
-  ArrowRight
+  Bath
 } from 'lucide-react';
 
 export const AmenitiesSection: React.FC = () => {
@@ -185,18 +184,6 @@ export const AmenitiesSection: React.FC = () => {
                     {item.desc}
                   </p>
                 </div>
-
-                {/* Bottom Right Arrow Button */}
-                <div className="pt-2 flex items-center justify-end">
-                  <motion.button 
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-8 h-8 rounded-full bg-[#E0F2E9] text-[#0E2C20] group-hover:bg-[#0E2C20] group-hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"
-                  >
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.button>
-                </div>
-
               </div>
             </motion.div>
           ))}

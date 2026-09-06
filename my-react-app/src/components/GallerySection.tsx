@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, LayoutGrid, Home, Bed, Mountain, Utensils, Heart, ArrowRight, TreePine } from 'lucide-react';
+import { Camera, LayoutGrid, Home, Bed, Mountain, Utensils, Heart, ArrowRight, TreePine, X, Sparkles } from 'lucide-react';
 import { galleryData } from '../data/galleryData';
 import type { GalleryItem } from '../types';
 import { LightboxModal } from './LightboxModal';
 
 export const GallerySection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [modalCategory, setModalCategory] = useState<string>('all');
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+  const [showAllPhotosModal, setShowAllPhotosModal] = useState<boolean>(false);
   const [likedMap, setLikedMap] = useState<Record<string, boolean>>({});
 
   const toggleLike = (e: React.MouseEvent, id: string) => {
@@ -16,7 +18,7 @@ export const GallerySection: React.FC = () => {
   };
 
   const categories = [
-    { id: 'all', label: 'All Photos', count: 24, icon: <LayoutGrid className="w-4 h-4" /> },
+    { id: 'all', label: 'All Photos', count: galleryData.length, icon: <LayoutGrid className="w-4 h-4" /> },
     { id: 'exteriors', label: 'Exteriors', icon: <Home className="w-4 h-4" /> },
     { id: 'interiors', label: 'Interiors', icon: <Bed className="w-4 h-4" /> },
     { id: 'views', label: 'Views & Nature', icon: <Mountain className="w-4 h-4" /> },
@@ -47,9 +49,13 @@ export const GallerySection: React.FC = () => {
     ? galleryData
     : galleryData.filter(g => g.category === activeCategory);
 
-  // Separate top row items (first 3) and bottom row items (remaining)
+  const modalFilteredItems = modalCategory === 'all'
+    ? galleryData
+    : galleryData.filter(g => g.category === modalCategory);
+
+  // Separate top row items (first 3) and bottom row items (max 4 for exactly 2 rows total)
   const topRowItems = filteredItems.slice(0, 3);
-  const bottomRowItems = filteredItems.slice(3);
+  const bottomRowItems = filteredItems.slice(3, 7);
 
   return (
     <section id="gallery" className="relative min-h-screen py-16 md:py-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
@@ -137,7 +143,14 @@ export const GallerySection: React.FC = () => {
                 key={cat.id}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                onClick={() => setActiveCategory(cat.id)}
+                onClick={() => {
+                  if (cat.id === 'all') {
+                    setActiveCategory('all');
+                    setShowAllPhotosModal(true);
+                  } else {
+                    setActiveCategory(cat.id);
+                  }
+                }}
                 style={{ padding: '12px 26px' }}
                 className={`flex items-center gap-3 rounded-full text-sm sm:text-base font-semibold transition-all cursor-pointer border ${
                   isActive
@@ -320,7 +333,7 @@ export const GallerySection: React.FC = () => {
 
           {/* Center Action Button */}
           <button 
-            onClick={() => setActiveCategory('all')}
+            onClick={() => setShowAllPhotosModal(true)}
             style={{ padding: '14px 34px' }}
             className="bg-[#0E2C20] hover:bg-[#184F39] text-white text-xs font-bold rounded-full flex items-center gap-2.5 shadow-md transition-all cursor-pointer"
           >
@@ -343,6 +356,145 @@ export const GallerySection: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Full Photo Gallery Showcase Popup Modal */}
+      <AnimatePresence>
+        {showAllPhotosModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 overflow-y-auto"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="bg-white text-gray-900 rounded-3xl max-w-6xl w-full shadow-2xl border border-gray-100 relative my-6 max-h-[92vh] overflow-y-auto"
+              style={{ padding: '20px' }}
+            >
+              {/* Modal Header */}
+              <div className="flex items-start justify-between border-b border-gray-100 pb-4 mb-5 px-2 pt-2">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE7DF] border border-[#C5D7CC] text-[10px] font-extrabold tracking-widest text-[#133A2B] uppercase mb-2">
+                    <Sparkles className="w-3.5 h-3.5 text-[#133A2B]" />
+                    <span>FULL RESORT GALLERY</span>
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#0E2C20]">
+                    All Resort <span className="font-serif italic font-normal text-[#1B4C37]">Photos</span>
+                  </h2>
+                  <p className="text-xs sm:text-sm text-gray-600 font-sans mt-1">
+                    Explore high-resolution photography of our luxury private cottages, panoramic mountain views, dining decks, and forest trails.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowAllPhotosModal(false)}
+                  className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Filter Pills in Modal */}
+              <div className="flex flex-wrap items-center gap-2 mb-6 px-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-400 mr-2">Category:</span>
+                {[
+                  { id: 'all', label: `All Photos (${galleryData.length})` },
+                  { id: 'exteriors', label: 'Exteriors' },
+                  { id: 'interiors', label: 'Interiors' },
+                  { id: 'views', label: 'Views & Nature' },
+                  { id: 'dining', label: 'Dining' }
+                ].map(tab => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setModalCategory(tab.id)}
+                    className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                      modalCategory === tab.id
+                        ? 'bg-[#0E2C20] text-white shadow-md'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Photo Cards Grid inside Modal */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2 pb-4">
+                {modalFilteredItems.map(item => {
+                  const isLiked = !!likedMap[item.id];
+                  return (
+                    <div
+                      key={item.id}
+                      onClick={() => setSelectedItem(item)}
+                      className="group relative rounded-[22px] overflow-hidden h-64 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200/80 bg-white"
+                    >
+                      <img
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20" />
+
+                      {/* Top Left Category Pill */}
+                      <div className="absolute top-3.5 left-3.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[#0E2C20] shadow-md flex items-center gap-1.5 z-10">
+                        {getCategoryIcon(item.category)}
+                        <span>{getCategoryLabel(item.category)}</span>
+                      </div>
+
+                      {/* Top Right Heart Favorite Button */}
+                      <motion.button
+                        whileHover={{ scale: 1.15 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={(e) => toggleLike(e, item.id)}
+                        className={`absolute top-3.5 right-3.5 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${
+                          isLiked 
+                            ? 'bg-red-500 text-white border border-red-400 shadow-md' 
+                            : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
+                        }`}
+                        title="Favorite photo"
+                      >
+                        <Heart className={`w-4 h-4 ${isLiked ? 'fill-white' : ''}`} />
+                      </motion.button>
+
+                      {/* Bottom Content Info */}
+                      <div className="absolute bottom-4 left-5 right-5 text-white flex items-end justify-between z-10">
+                        <div className="space-y-1 max-w-[80%]">
+                          <h3 className="text-base sm:text-lg font-bold font-serif leading-snug text-white">
+                            {item.title}
+                          </h3>
+                          <p className="text-[11px] text-gray-200 line-clamp-1 font-sans opacity-90">
+                            {item.caption}
+                          </p>
+                        </div>
+
+                        {/* Circular Action Button */}
+                        <div className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white group-hover:bg-[#0E2C20] group-hover:border-[#0E2C20] flex items-center justify-center transition-all cursor-pointer shrink-0 shadow-md">
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Modal Footer Bar */}
+              <div className="pt-4 border-t border-gray-100 flex items-center justify-between px-2">
+                <span className="text-xs text-gray-500 font-medium">
+                  Showing {modalFilteredItems.length} of {galleryData.length} resort photos
+                </span>
+                <button
+                  onClick={() => setShowAllPhotosModal(false)}
+                  className="px-6 py-2.5 rounded-full bg-[#0E2C20] text-[#E5C158] text-xs font-bold hover:bg-[#184F39] transition-colors cursor-pointer shadow-sm"
+                >
+                  Done Exploring
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Lightbox Modal */}
       <LightboxModal

@@ -76,7 +76,7 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
 
         {/* Top Section Header Grid */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -128,10 +128,11 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
             </div>
 
             {/* Watch Story Pill Button */}
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 shadow-sm hover:shadow-md text-xs font-bold text-[#0E281C] hover:bg-white transition-all cursor-pointer"
+              style={{ padding: '12px 24px 12px 12px' }}
+              className="flex items-center gap-3 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 shadow-sm hover:shadow-md text-xs sm:text-sm font-bold text-[#0E281C] hover:bg-white transition-all cursor-pointer"
             >
               <div className="w-7 h-7 rounded-full bg-[#242726] text-white flex items-center justify-center shadow-inner">
                 <Play className="w-3 h-3 fill-white ml-0.5" />
@@ -158,8 +159,8 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
                   onClick={() => setActiveTab(tab.id)}
                   style={{ padding: '14px 28px' }}
                   className={`flex items-center gap-3.5 rounded-full text-sm sm:text-base font-semibold transition-all cursor-pointer border ${isActive
-                      ? 'bg-[#0E2C20] text-white border-[#0E2C20] shadow-md'
-                      : 'bg-white/95 text-gray-800 hover:bg-white border-gray-200 shadow-sm'
+                    ? 'bg-[#0E2C20] text-white border-[#0E2C20] shadow-md'
+                    : 'bg-white/95 text-gray-800 hover:bg-white border-gray-200 shadow-sm'
                     }`}
                 >
                   <span className={`shrink-0 ${isActive ? 'text-white' : 'text-[#1E4A37]'}`}>
@@ -179,7 +180,7 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
 
         {/* Cottages Grid (4 Cards Row) */}
         <AnimatePresence mode="wait">
-          <motion.div 
+          <motion.div
             key={activeTab}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

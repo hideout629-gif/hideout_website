@@ -1,5 +1,3 @@
-import type { GalleryItem } from '../types';
-
 export const galleryData: GalleryItem[] = [
   {
     id: 'gal-1',
@@ -45,9 +43,72 @@ export const galleryData: GalleryItem[] = [
   },
   {
     id: 'gal-7',
-    title: 'Luxury Bedroom',
+    title: 'Luxury Bedroom Suite',
     category: 'interiors',
     imageUrl: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1000&q=80',
-    caption: 'Elegant wooden interior with mountain view.'
+    caption: 'Elegant wooden interior with mountain views and plush bedding.'
+  },
+  {
+    id: 'gal-8',
+    title: 'Private Infinity Pool View',
+    category: 'exteriors',
+    imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Secluded pool overlooking the Nilgiri valley horizon.'
+  },
+  {
+    id: 'gal-9',
+    title: 'Master Bathroom Soak Tub',
+    category: 'interiors',
+    imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Freestanding ceramic bathtub next to floor-to-ceiling forest windows.'
+  },
+  {
+    id: 'gal-10',
+    title: 'Sunset Gazebo Lounge',
+    category: 'views',
+    imageUrl: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Watch golden hour colors paint the mountain sky.'
+  },
+  {
+    id: 'gal-11',
+    title: 'Gourmet Organic Dinner',
+    category: 'dining',
+    imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Chef special farm-to-table dinner under warm festive lights.'
+  },
+  {
+    id: 'gal-12',
+    title: 'Tea Garden Morning Walk',
+    category: 'views',
+    imageUrl: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Dewy morning sun rays filtering through organic tea plants.'
+  },
+  {
+    id: 'gal-13',
+    title: 'Cottage Veranda Hammock',
+    category: 'exteriors',
+    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Relaxing handwoven hammock on private balcony.'
+  },
+  {
+    id: 'gal-14',
+    title: 'Honeymoon Loft Living Room',
+    category: 'interiors',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Spacious loft design with warm cedar timber beams.'
+  },
+  {
+    id: 'gal-15',
+    title: 'Nilgiri High Tea Service',
+    category: 'dining',
+    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Freshly brewed artisan Nilgiri tea with warm scones & pastries.'
+  },
+  {
+    id: 'gal-16',
+    title: 'Starry Night Campfire Ground',
+    category: 'views',
+    imageUrl: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=1000&q=80',
+    caption: 'Gather around the central bonfire circle under clear night constellations.'
   }
 ];

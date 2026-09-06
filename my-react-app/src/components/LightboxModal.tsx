@@ -32,7 +32,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ item, items, onClo
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl p-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4"
         >
           {/* Close Button */}
           <motion.button

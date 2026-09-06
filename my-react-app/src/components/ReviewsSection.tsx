@@ -1,14 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Star, CheckCircle2, ChevronLeft, ChevronRight, Users, Calendar, ArrowRight, Heart } from 'lucide-react';
+import { Star, CheckCircle2, Users, Calendar, Heart } from 'lucide-react';
 import { reviewsData } from '../data/reviewsData';
 
 export const ReviewsSection: React.FC = () => {
-  const [activeDot, setActiveDot] = useState<number>(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [activeDotIndex, setActiveDotIndex] = useState<number>(0);
+
+  const handleScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollPosition = container.scrollLeft;
+    const cardWidth = container.firstElementChild
+      ? (container.firstElementChild as HTMLElement).offsetWidth + 24
+      : 320;
+    const newIndex = Math.min(
+      Math.max(0, Math.round(scrollPosition / cardWidth)),
+      reviewsData.length - 1
+    );
+    if (newIndex !== activeDotIndex) {
+      setActiveDotIndex(newIndex);
+    }
+  };
+
+  const scrollToCard = (index: number) => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const cardElement = container.children[index] as HTMLElement;
+    if (cardElement) {
+      cardElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      setActiveDotIndex(index);
+    }
+  };
 
   return (
     <section id="reviews" className="relative min-h-screen py-16 md:py-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
-      
+
       {/* Background Soft Misty Mountain Gradient & Silhouette */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#DFEADF]/60 via-[#EAF1EC] to-[#E5EEE7]" />
@@ -18,27 +45,27 @@ export const ReviewsSection: React.FC = () => {
       {/* Decorative Left Leaf Graphic */}
       <div className="absolute -left-4 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none">
         <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-40 -20 C30 100 110 250 20 450 C-20 520 -50 580 -80 620" stroke="#1B4231" strokeWidth="3" opacity="0.7"/>
-          <path d="M10 80 C60 50 120 70 140 120 C90 130 40 110 10 80 Z" fill="#24543F" opacity="0.85"/>
-          <path d="M45 180 C110 150 175 180 185 240 C125 250 70 220 45 180 Z" fill="#1C4533" opacity="0.9"/>
-          <path d="M30 310 C100 280 160 320 165 380 C105 385 55 350 30 310 Z" fill="#2A5C46" opacity="0.8"/>
+          <path d="M-40 -20 C30 100 110 250 20 450 C-20 520 -50 580 -80 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
+          <path d="M10 80 C60 50 120 70 140 120 C90 130 40 110 10 80 Z" fill="#24543F" opacity="0.85" />
+          <path d="M45 180 C110 150 175 180 185 240 C125 250 70 220 45 180 Z" fill="#1C4533" opacity="0.9" />
+          <path d="M30 310 C100 280 160 320 165 380 C105 385 55 350 30 310 Z" fill="#2A5C46" opacity="0.8" />
         </svg>
       </div>
 
       {/* Decorative Right Leaf Graphic */}
       <div className="absolute -right-4 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none">
         <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <path d="M240 -20 C170 120 90 280 180 480 C220 540 240 580 260 620" stroke="#1B4231" strokeWidth="3" opacity="0.7"/>
-          <path d="M190 100 C140 70 80 90 60 140 C110 150 160 130 190 100 Z" fill="#24543F" opacity="0.85"/>
-          <path d="M155 210 C90 180 25 210 15 270 C75 280 130 250 155 210 Z" fill="#1C4533" opacity="0.9"/>
-          <path d="M170 340 C100 310 40 350 35 410 C95 415 145 380 170 340 Z" fill="#2A5C46" opacity="0.8"/>
+          <path d="M240 -20 C170 120 90 280 180 480 C220 540 240 580 260 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
+          <path d="M190 100 C140 70 80 90 60 140 C110 150 160 130 190 100 Z" fill="#24543F" opacity="0.85" />
+          <path d="M155 210 C90 180 25 210 15 270 C75 280 130 250 155 210 Z" fill="#1C4533" opacity="0.9" />
+          <path d="M170 340 C100 310 40 350 35 410 C95 415 145 380 170 340 Z" fill="#2A5C46" opacity="0.8" />
         </svg>
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
-        
+
         {/* Top Section Header Grid */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -46,7 +73,7 @@ export const ReviewsSection: React.FC = () => {
           style={{ marginBottom: '28px' }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
         >
-          
+
           {/* Left Main Title & Subtitle */}
           <div className="lg:col-span-8 space-y-3">
             <div className="flex items-center gap-3">
@@ -74,23 +101,28 @@ export const ReviewsSection: React.FC = () => {
               "Real People<br />Real Stories<br />Beautiful Stays"
             </div>
             <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#184533]/40 stroke-current stroke-2 mt-1">
-              <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round"/>
+              <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round" />
             </svg>
           </div>
 
         </motion.div>
 
-        {/* 4 Review Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        {/* Scrollable Review Cards Carousel */}
+        <div
+          ref={scrollContainerRef}
+          onScroll={handleScroll}
+          className="flex items-stretch gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory py-4 px-1 w-full"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {reviewsData.map((rev, idx) => (
             <motion.div
               key={rev.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
               whileHover={{ y: -8 }}
-              className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group"
+              className="snap-start shrink-0 w-[280px] sm:w-[310px] lg:w-[330px] bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
             >
               {/* Top Image Portion with Badges */}
               <div className="relative h-52 overflow-hidden shrink-0">
@@ -120,7 +152,7 @@ export const ReviewsSection: React.FC = () => {
               </div>
 
               {/* Card Body Content - Explicit padding: 20px */}
-              <div 
+              <div
                 className="flex-1 flex flex-col justify-between space-y-4"
                 style={{ padding: '20px' }}
               >
@@ -168,34 +200,31 @@ export const ReviewsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Carousel Pagination Controls */}
-        <div className="flex items-center justify-center gap-3" style={{ marginTop: '28px' }}>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-9 h-9 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
-            <ChevronLeft className="w-4 h-4" />
-          </motion.button>
-          <div className="flex items-center gap-2 px-2">
-            {[0, 1, 2, 3].map((idx) => (
+        {/* Centered Pagination Dots */}
+        <div className="relative flex items-center justify-center w-full" style={{ marginTop: '28px' }}>
+          <div className="flex items-center gap-2.5">
+            {reviewsData.map((rev, idx) => (
               <button
-                key={idx}
-                onClick={() => setActiveDot(idx)}
-                className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${
-                  activeDot === idx ? 'bg-[#0E2C20] w-6' : 'bg-gray-300 hover:bg-gray-400'
+                key={rev.id}
+                onClick={() => scrollToCard(idx)}
+                title={`Review by ${rev.name}`}
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeDotIndex === idx
+                    ? 'w-8 bg-[#0E2C20] shadow-sm'
+                    : 'w-2.5 bg-[#0E2C20]/25 hover:bg-[#0E2C20]/45'
                 }`}
               />
             ))}
           </div>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-9 h-9 rounded-full bg-white/90 border border-gray-200 text-gray-800 hover:bg-white shadow-sm flex items-center justify-center cursor-pointer transition-all">
-            <ChevronRight className="w-4 h-4" />
-          </motion.button>
         </div>
 
         {/* Section Bottom Social Proof Metrics Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-4 border-t border-gray-200/60" style={{ marginTop: '24px' }}>
-          
+
           {/* Left Tagline & Doodle */}
           <div className="flex items-center gap-2 text-left">
             <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-[#1E4A37] stroke-current stroke-2 opacity-70">
-              <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#5B826D] leading-tight">
               CREATING MEMORIES<br />
@@ -236,16 +265,16 @@ export const ReviewsSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Action Button */}
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            style={{ padding: '14px 34px' }}
-            className="bg-[#0E2C20] hover:bg-[#184F39] text-white text-xs font-bold rounded-full flex items-center gap-2.5 shadow-md transition-all cursor-pointer shrink-0"
-          >
-            <span>Read More Reviews</span>
-            <ArrowRight className="w-3.5 h-3.5 ml-1" />
-          </motion.button>
+          {/* Right Tagline */}
+          <div className="flex items-center gap-2 text-right">
+            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-[#1E4A37] stroke-current stroke-2 opacity-70">
+              <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#5B826D] leading-tight">
+              HIDEOUT RESORT<br />
+              <span className="text-gray-400 font-normal">AUTHENTIC REVIEWS</span>
+            </div>
+          </div>
 
         </div>
 

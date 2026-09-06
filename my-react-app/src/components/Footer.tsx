@@ -48,14 +48,14 @@ export const Footer: React.FC = () => {
         </svg>
       </div>
 
-      {/* Main Container - Full 1600px Width Distribution */}
-      <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-14 py-8 md:py-10 relative z-20">
+      {/* Main Container - Full Width Distribution with exact 12px padding */}
+      <div className="w-full box-border p-[12px] relative z-20">
         
-        {/* 5 Grid Columns filling the entire footer width smoothly */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-10 items-center w-full">
+        {/* 5 Grid Columns filling the entire footer width smoothly with 32px gap */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 items-center w-full">
           
-          {/* Column 1: Brand Info (3.5 cols) */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Column 1: Brand Info */}
+          <div className="space-y-4">
             <div className="flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-full border-2 border-[#E5B849]/70 bg-emerald-950/80 flex items-center justify-center p-2 shadow-inner shrink-0">
                 <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#E5B849]" stroke="currentColor" strokeWidth="1.8">
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-sm">
+            <p className="text-[14px] text-gray-300 leading-relaxed">
               Handcrafted luxury wooden mountain cottages in the heart of Hideout's misty tea valleys. Experience peace, warmth, and nature's finest views.
             </p>
 
@@ -108,18 +108,18 @@ export const Footer: React.FC = () => {
 
             <div className="pt-1 flex items-center gap-2">
               <span className="text-base">🍃</span>
-              <span className="font-serif italic text-emerald-200/90 text-xs sm:text-sm font-normal">
+              <span className="font-serif italic text-emerald-200/90 text-[14px] font-normal">
                 Mountains Heal Differently
               </span>
             </div>
           </div>
 
-          {/* Column 2: Quick Links (2 cols) */}
-          <div className="lg:col-span-2 lg:border-r lg:border-white/10 lg:pr-4">
-            <h4 className="text-base font-bold text-white font-serif mb-3 pb-1.5 border-b border-white/10">
+          {/* Column 2: Quick Links */}
+          <div className="lg:border-r lg:border-white/10 lg:pr-4">
+            <h4 className="text-[17px] lg:text-[18px] font-bold text-white font-serif mb-3 pb-1.5 border-b border-white/10">
               Quick Links
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
+            <ul className="space-y-2.5 text-[14px] lg:text-[15px]">
               <li><a href="#home" className="hover:text-[#E5B849] transition-colors flex items-center justify-between text-gray-300 hover:translate-x-1 duration-200"><span>Home Overview</span><ChevronRight className="w-3.5 h-3.5 text-gray-500" /></a></li>
               <li><a href="#cottages" className="hover:text-[#E5B849] transition-colors flex items-center justify-between text-gray-300 hover:translate-x-1 duration-200"><span>Luxury Cottages</span><ChevronRight className="w-3.5 h-3.5 text-gray-500" /></a></li>
               <li><a href="#experiences" className="hover:text-[#E5B849] transition-colors flex items-center justify-between text-gray-300 hover:translate-x-1 duration-200"><span>Resort Experiences</span><ChevronRight className="w-3.5 h-3.5 text-gray-500" /></a></li>
@@ -128,12 +128,12 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Cottages (2 cols) */}
-          <div className="lg:col-span-2 lg:border-r lg:border-white/10 lg:pr-4">
-            <h4 className="text-base font-bold text-white font-serif mb-3 pb-1.5 border-b border-white/10">
+          {/* Column 3: Cottages */}
+          <div className="lg:border-r lg:border-white/10 lg:pr-4">
+            <h4 className="text-[17px] lg:text-[18px] font-bold text-white font-serif mb-3 pb-1.5 border-b border-white/10">
               Cottages
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
+            <ul className="space-y-2.5 text-[14px] lg:text-[15px]">
               <li><a href="#cottages" className="hover:text-[#E5B849] transition-colors flex items-center justify-between text-gray-300 hover:translate-x-1 duration-200"><span>Luxury Hilltop Cottage</span><ChevronRight className="w-3.5 h-3.5 text-gray-500" /></a></li>
               <li><a href="#cottages" className="hover:text-[#E5B849] transition-colors flex items-center justify-between text-gray-300 hover:translate-x-1 duration-200"><span>Tea Garden Cottage</span><ChevronRight className="w-3.5 h-3.5 text-gray-500" /></a></li>
               <li><a href="#cottages" className="hover:text-[#E5B849] transition-colors flex items-center justify-between text-gray-300 hover:translate-x-1 duration-200"><span>Grand Family Villa</span><ChevronRight className="w-3.5 h-3.5 text-gray-500" /></a></li>
@@ -141,12 +141,12 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact Info (2 cols) */}
-          <div className="lg:col-span-2 lg:border-r lg:border-white/10 lg:pr-4 space-y-2.5">
-            <h4 className="text-base font-bold text-white font-serif mb-3 pb-1.5 border-b border-white/10">
+          {/* Column 4: Contact Info */}
+          <div className="lg:border-r lg:border-white/10 lg:pr-4 space-y-2.5">
+            <h4 className="text-[17px] lg:text-[18px] font-bold text-white font-serif mb-3 pb-1.5 border-b border-white/10">
               Contact Info
             </h4>
-            <ul className="space-y-3 text-xs sm:text-sm">
+            <ul className="space-y-3 text-[14px] lg:text-[15px]">
               <li className="flex items-start gap-2 text-gray-300">
                 <div className="w-6.5 h-6.5 rounded-full bg-emerald-950 border border-emerald-500/30 text-[#E5B849] flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin className="w-3.5 h-3.5 text-[#E5B849]" />
@@ -175,19 +175,19 @@ export const Footer: React.FC = () => {
                 <div className="leading-snug">
                   <div>Check-in: 12:00 PM</div>
                   <div>Check-out: 11:00 AM</div>
-                  <div className="text-[11px] text-gray-400 font-semibold">(24/7 Front Desk)</div>
+                  <div className="text-[12px] text-gray-400 font-semibold">(24/7 Front Desk)</div>
                 </div>
               </li>
             </ul>
           </div>
 
-          {/* Column 5: Location Map Card (3 cols) */}
-          <div className="lg:col-span-3 w-full flex items-center justify-center">
+          {/* Column 5: Location Map Card */}
+          <div className="w-full flex items-center justify-center">
             <a 
               href="https://maps.google.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="block rounded-[20px] overflow-hidden border-2 border-white/20 shadow-2xl relative h-56 sm:h-60 lg:h-60 group cursor-pointer w-full"
+              className="block rounded-[20px] overflow-hidden border-2 border-white/20 shadow-2xl relative h-56 sm:h-60 lg:h-56 group cursor-pointer w-full"
             >
               <img 
                 src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800" 
@@ -196,7 +196,7 @@ export const Footer: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
               
-              <div className="absolute inset-0 flex items-center justify-center pb-6">
+              <div className="absolute inset-0 flex items-center justify-center pb-8">
                 <div className="relative">
                   <div className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md text-emerald-400 flex items-center justify-center shadow-lg border border-white/30 transform group-hover:scale-110 transition-transform">
                     <MapPin className="w-5 h-5 text-emerald-400" />
@@ -219,7 +219,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar with Mountain Crest & Back to Top */}
-        <div className="mt-8 pt-6 pb-2 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-medium w-full">
+        <div className="mt-8 pt-6 pb-2 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-gray-400 font-medium w-full">
           
           {/* Left Copyright */}
           <div>
@@ -252,7 +252,7 @@ export const Footer: React.FC = () => {
             {/* Back to Top Button */}
             <button 
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-xs font-bold text-gray-300 hover:text-white group cursor-pointer"
+              className="flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-300 hover:text-white group cursor-pointer"
             >
               <div className="w-8 h-8 rounded-full bg-[#133020] border border-emerald-500/30 text-emerald-300 flex items-center justify-center group-hover:bg-[#E5B849] group-hover:text-[#08170E] transition-all">
                 <ArrowUp className="w-4 h-4" />
