@@ -32,7 +32,7 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
     : cottagesData.filter(c => c.category === activeTab);
 
   return (
-    <section id="cottages" className="relative min-h-screen py-16 md:py-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
+    <section id="cottages" className="relative min-h-fit py-14 md:py-24 pt-20 md:pt-28 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
 
       {/* Background Soft Misty Mountain Gradient & Pine Forest Backdrop Silhouette */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -41,8 +41,8 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
         <div className="absolute inset-x-0 top-0 h-80 opacity-10 bg-[radial-gradient(#1A4231_1.5px,transparent_1.5px)] [background-size:24px_24px]" />
       </div>
 
-      {/* Decorative Left Leaf Graphic */}
-      <div className="absolute -left-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-left">
+      {/* Decorative Left Leaf Graphic (Visible on Desktop, hidden on Mobile to prevent text collision) */}
+      <div className="hidden md:block absolute -left-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-left">
         <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           {/* Main Leaf Stem */}
           <path d="M-40 -20 C30 100 110 250 20 450 C-20 520 -50 580 -80 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
@@ -57,8 +57,8 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
         </svg>
       </div>
 
-      {/* Decorative Right Leaf Graphic */}
-      <div className="absolute -right-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-right">
+      {/* Decorative Right Leaf Graphic (Visible on Desktop, hidden on Mobile to prevent text collision) */}
+      <div className="hidden md:block absolute -right-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-right">
         <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           {/* Right Main Stem */}
           <path d="M240 -20 C170 120 90 280 180 480 C220 540 240 580 260 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />

@@ -32,9 +32,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 w-full dark-glass-nav border-b border-white/10 shadow-2xl transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 w-full bg-[#07170E]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300"
     >
-      <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-10 md:px-14 lg:px-16 py-5 md:py-6 flex items-center justify-between">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-10 md:px-14 lg:px-16 py-3.5 sm:py-5 md:py-6 flex items-center justify-between">
         
         {/* Brand Logo */}
         <motion.button 
