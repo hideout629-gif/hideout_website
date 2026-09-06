@@ -228,6 +228,104 @@ h1, h2, h3, h4, .font-serif {
   animation: pulse-glow 3.5s ease-in-out infinite;
 }
 
+/* Wind Sway Animation for Decorative Leaf Foliage */
+@keyframes windSwayLeft {
+  0%, 100% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  20% {
+    transform: rotate(3.5deg) skewX(2deg) translateY(-2px);
+  }
+  40% {
+    transform: rotate(-2deg) skewX(-1.5deg) translateY(1px);
+  }
+  60% {
+    transform: rotate(4deg) skewX(2.5deg) translateY(-3px);
+  }
+  80% {
+    transform: rotate(-1.5deg) skewX(-1deg) translateY(0px);
+  }
+}
+
+@keyframes windSwayRight {
+  0%, 100% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  20% {
+    transform: rotate(-3.5deg) skewX(-2deg) translateY(-2px);
+  }
+  40% {
+    transform: rotate(2deg) skewX(1.5deg) translateY(1px);
+  }
+  60% {
+    transform: rotate(-4deg) skewX(-2.5deg) translateY(-3px);
+  }
+  80% {
+    transform: rotate(1.5deg) skewX(1deg) translateY(0px);
+  }
+}
+
+@keyframes leafFlutterTop {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  30% {
+    transform: rotate(6deg) scale(1.02);
+  }
+  70% {
+    transform: rotate(-4deg) scale(0.98);
+  }
+}
+
+@keyframes leafFlutterMid {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-5deg) scale(0.99);
+  }
+  65% {
+    transform: rotate(7deg) scale(1.03);
+  }
+}
+
+@keyframes leafFlutterLow {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  35% {
+    transform: rotate(4deg) scale(1.01);
+  }
+  75% {
+    transform: rotate(-6deg) scale(0.98);
+  }
+}
+
+.animate-wind-sway-left {
+  transform-origin: bottom left;
+  animation: windSwayLeft 7s ease-in-out infinite;
+}
+
+.animate-wind-sway-right {
+  transform-origin: bottom right;
+  animation: windSwayRight 7.5s ease-in-out infinite;
+}
+
+.animate-leaf-flutter-top {
+  transform-origin: 10px 80px;
+  animation: leafFlutterTop 4.5s ease-in-out infinite;
+}
+
+.animate-leaf-flutter-mid {
+  transform-origin: 45px 180px;
+  animation: leafFlutterMid 5.5s ease-in-out infinite 0.6s;
+}
+
+.animate-leaf-flutter-low {
+  transform-origin: 30px 310px;
+  animation: leafFlutterLow 4.8s ease-in-out infinite 1.2s;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

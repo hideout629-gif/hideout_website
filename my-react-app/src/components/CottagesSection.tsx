@@ -41,35 +41,33 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
         <div className="absolute inset-x-0 top-0 h-80 opacity-10 bg-[radial-gradient(#1A4231_1.5px,transparent_1.5px)] [background-size:24px_24px]" />
       </div>
 
-      {/* Decorative Left Leaf Graphic (Matching Screenshot 2 Left Leaves Frame) */}
-      <div className="absolute -left-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none">
+      {/* Decorative Left Leaf Graphic */}
+      <div className="absolute -left-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-left">
         <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           {/* Main Leaf Stem */}
           <path d="M-40 -20 C30 100 110 250 20 450 C-20 520 -50 580 -80 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
           {/* Leaf 1 */}
-          <path d="M10 80 C60 50 120 70 140 120 C90 130 40 110 10 80 Z" fill="#24543F" opacity="0.85" />
-          <path d="M10 80 C60 95 140 120 140 120" stroke="#8EB19D" strokeWidth="1.5" opacity="0.6" />
+          <path d="M10 80 C60 50 120 70 140 120 C90 130 40 110 10 80 Z" fill="#24543F" opacity="0.85" className="animate-leaf-flutter-top" />
           {/* Leaf 2 */}
-          <path d="M45 180 C110 150 175 180 185 240 C125 250 70 220 45 180 Z" fill="#1C4533" opacity="0.9" />
-          <path d="M45 180 C105 200 185 240 185 240" stroke="#A3C4B2" strokeWidth="1.5" opacity="0.6" />
+          <path d="M45 180 C110 150 175 180 185 240 C125 250 70 220 45 180 Z" fill="#1C4533" opacity="0.9" className="animate-leaf-flutter-mid" />
           {/* Leaf 3 */}
-          <path d="M30 310 C100 280 160 320 165 380 C105 385 55 350 30 310 Z" fill="#2A5C46" opacity="0.8" />
+          <path d="M30 310 C100 280 160 320 165 380 C105 385 55 350 30 310 Z" fill="#2A5C46" opacity="0.8" className="animate-leaf-flutter-low" />
           {/* Lower Small Leaves */}
           <path d="M5 420 C50 400 95 430 100 470 C60 475 25 450 5 420 Z" fill="#183D2D" opacity="0.85" />
         </svg>
       </div>
 
-      {/* Decorative Right Leaf Graphic (Matching Screenshot 2 Right Leaves Frame) */}
-      <div className="absolute -right-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none">
+      {/* Decorative Right Leaf Graphic */}
+      <div className="absolute -right-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-right">
         <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           {/* Right Main Stem */}
           <path d="M240 -20 C170 120 90 280 180 480 C220 540 240 580 260 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
           {/* Right Leaf 1 */}
-          <path d="M190 100 C140 70 80 90 60 140 C110 150 160 130 190 100 Z" fill="#24543F" opacity="0.85" />
+          <path d="M190 100 C140 70 80 90 60 140 C110 150 160 130 190 100 Z" fill="#24543F" opacity="0.85" className="animate-leaf-flutter-top" />
           {/* Right Leaf 2 */}
-          <path d="M155 210 C90 180 25 210 15 270 C75 280 130 250 155 210 Z" fill="#1C4533" opacity="0.9" />
+          <path d="M155 210 C90 180 25 210 15 270 C75 280 130 250 155 210 Z" fill="#1C4533" opacity="0.9" className="animate-leaf-flutter-mid" />
           {/* Right Leaf 3 */}
-          <path d="M170 340 C100 310 40 350 35 410 C95 415 145 380 170 340 Z" fill="#2A5C46" opacity="0.8" />
+          <path d="M170 340 C100 310 40 350 35 410 C95 415 145 380 170 340 Z" fill="#2A5C46" opacity="0.8" className="animate-leaf-flutter-low" />
         </svg>
       </div>
 

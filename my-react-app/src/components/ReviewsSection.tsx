@@ -43,22 +43,22 @@ export const ReviewsSection: React.FC = () => {
       </div>
 
       {/* Decorative Left Leaf Graphic */}
-      <div className="absolute -left-4 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none">
+      <div className="absolute -left-4 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-left">
         <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <path d="M-40 -20 C30 100 110 250 20 450 C-20 520 -50 580 -80 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
-          <path d="M10 80 C60 50 120 70 140 120 C90 130 40 110 10 80 Z" fill="#24543F" opacity="0.85" />
-          <path d="M45 180 C110 150 175 180 185 240 C125 250 70 220 45 180 Z" fill="#1C4533" opacity="0.9" />
-          <path d="M30 310 C100 280 160 320 165 380 C105 385 55 350 30 310 Z" fill="#2A5C46" opacity="0.8" />
+          <path d="M10 80 C60 50 120 70 140 120 C90 130 40 110 10 80 Z" fill="#24543F" opacity="0.85" className="animate-leaf-flutter-top" />
+          <path d="M45 180 C110 150 175 180 185 240 C125 250 70 220 45 180 Z" fill="#1C4533" opacity="0.9" className="animate-leaf-flutter-mid" />
+          <path d="M30 310 C100 280 160 320 165 380 C105 385 55 350 30 310 Z" fill="#2A5C46" opacity="0.8" className="animate-leaf-flutter-low" />
         </svg>
       </div>
 
       {/* Decorative Right Leaf Graphic */}
-      <div className="absolute -right-4 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none">
+      <div className="absolute -right-4 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-right">
         <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <path d="M240 -20 C170 120 90 280 180 480 C220 540 240 580 260 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
-          <path d="M190 100 C140 70 80 90 60 140 C110 150 160 130 190 100 Z" fill="#24543F" opacity="0.85" />
-          <path d="M155 210 C90 180 25 210 15 270 C75 280 130 250 155 210 Z" fill="#1C4533" opacity="0.9" />
-          <path d="M170 340 C100 310 40 350 35 410 C95 415 145 380 170 340 Z" fill="#2A5C46" opacity="0.8" />
+          <path d="M190 100 C140 70 80 90 60 140 C110 150 160 130 190 100 Z" fill="#24543F" opacity="0.85" className="animate-leaf-flutter-top" />
+          <path d="M155 210 C90 180 25 210 15 270 C75 280 130 250 155 210 Z" fill="#1C4533" opacity="0.9" className="animate-leaf-flutter-mid" />
+          <path d="M170 340 C100 310 40 350 35 410 C95 415 145 380 170 340 Z" fill="#2A5C46" opacity="0.8" className="animate-leaf-flutter-low" />
         </svg>
       </div>
 
@@ -208,11 +208,10 @@ export const ReviewsSection: React.FC = () => {
                 key={rev.id}
                 onClick={() => scrollToCard(idx)}
                 title={`Review by ${rev.name}`}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeDotIndex === idx
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeDotIndex === idx
                     ? 'w-8 bg-[#0E2C20] shadow-sm'
                     : 'w-2.5 bg-[#0E2C20]/25 hover:bg-[#0E2C20]/45'
-                }`}
+                  }`}
               />
             ))}
           </div>

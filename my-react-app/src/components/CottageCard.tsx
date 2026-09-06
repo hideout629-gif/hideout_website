@@ -13,7 +13,7 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
   const [isLiked, setIsLiked] = useState(false);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -50,11 +50,10 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
             e.stopPropagation();
             setIsLiked(!isLiked);
           }}
-          className={`absolute top-3.5 right-3.5 w-9 h-9 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${
-            isLiked 
-              ? 'bg-red-500 text-white border border-red-400 shadow-md' 
+          className={`absolute top-3.5 right-3.5 w-9 h-9 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${isLiked
+              ? 'bg-red-500 text-white border border-red-400 shadow-md'
               : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
-          }`}
+            }`}
           title="Save to favorites"
         >
           <Heart className={`w-4.5 h-4.5 ${isLiked ? 'fill-white' : ''}`} />
@@ -76,7 +75,7 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
       </div>
 
       {/* Card Content Body - Explicit padding: 20px */}
-      <div 
+      <div
         className="flex-1 flex flex-col justify-between space-y-4"
         style={{ padding: '20px' }}
       >
