@@ -15,7 +15,6 @@ import './styles/index.css';
 
 export function App() {
   const [selectedCottageForDetail, setSelectedCottageForDetail] = useState<Cottage | null>(null);
-  const [selectedCottageForBooking, setSelectedCottageForBooking] = useState<Cottage | null>(null);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('home');
   const [toast, setToast] = useState<ToastMessage | null>(null);
@@ -26,13 +25,6 @@ export function App() {
 
   const handleSelectCottageDetail = (cottage: Cottage) => {
     setSelectedCottageForDetail(cottage);
-  };
-
-  const handleOpenBooking = (cottage?: Cottage | null) => {
-    if (cottage) {
-      setSelectedCottageForBooking(cottage);
-    }
-    setIsBookingModalOpen(true);
   };
 
   const handleBookingSubmit = (cottageName: string) => {
@@ -68,48 +60,34 @@ export function App() {
       {/* Cottages Showcase Section */}
       <CottagesSection
         onSelectDetail={handleSelectCottageDetail}
-        onOpenBooking={handleOpenBooking}
-        onShowToast={showToast}
       />
 
       {/* Curated Resort Experiences Section */}
       <ExperiencesSection />
 
       {/* Photo Gallery & Lightbox */}
-      <GallerySection 
-        onShowToast={showToast}
-      />
+      <GallerySection />
 
       {/* Guest Reviews & Ratings */}
-      <ReviewsSection 
-        onShowToast={showToast}
-      />
+      <ReviewsSection />
 
       {/* Facilities & Amenities Grid */}
-      <AmenitiesSection 
-        onShowToast={showToast}
-      />
+      <AmenitiesSection />
 
       {/* Footer */}
-      <Footer 
-        onShowToast={showToast}
-      />
+      <Footer />
 
       {/* Cottage Detail Modal */}
       <CottageDetailModal
         cottage={selectedCottageForDetail}
         onClose={() => setSelectedCottageForDetail(null)}
-        onReserve={(cottage) => {
-          setSelectedCottageForDetail(null);
-          handleOpenBooking(cottage);
-        }}
       />
 
       {/* Instant Booking Inquiry Modal */}
       <BookingModal
         isOpen={isBookingModalOpen}
         onClose={() => setIsBookingModalOpen(false)}
-        initialCottage={selectedCottageForBooking}
+        initialCottage={null}
         onBookingSubmit={handleBookingSubmit}
       />
 

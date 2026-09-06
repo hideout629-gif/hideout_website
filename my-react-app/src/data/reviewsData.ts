@@ -1,3 +1,5 @@
+import type { Review } from '../types';
+
 export const reviewsData: Review[] = [
   {
     id: 'rev-1',

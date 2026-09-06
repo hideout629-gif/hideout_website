@@ -1,3 +1,5 @@
+import type { GalleryItem } from '../types';
+
 export const galleryData: GalleryItem[] = [
   {
     id: 'gal-1',
