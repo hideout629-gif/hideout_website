@@ -58,6 +58,41 @@ body {
   padding: 0;
 }
 
+/* ─── Scroll-Snap Container (Desktop only) ─── */
+@media (min-width: 1024px) {
+  .homepage {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    height: 100vh;
+  }
+}
+
+/* ─── Homepage Section Base ─── */
+.homepage-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .homepage-section {
+    height: 100vh;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+@media (max-width: 1023px) {
+  .homepage-section {
+    min-height: auto;
+    height: auto;
+  }
+}
+
 /* Typography Helpers */
 h1, h2, h3, h4, .font-serif {
   font-family: var(--font-serif);

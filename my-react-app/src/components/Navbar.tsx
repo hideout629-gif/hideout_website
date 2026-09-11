@@ -28,28 +28,28 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
   };
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="fixed top-0 left-0 right-0 z-50 w-full bg-[#07170E]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300"
     >
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-10 md:px-14 lg:px-16 py-3.5 sm:py-5 md:py-6 flex items-center justify-between">
-        
+
         {/* Brand Logo */}
-        <motion.button 
+        <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          onClick={() => handleNavClick('home')} 
+          onClick={() => handleNavClick('home')}
           className="flex items-center gap-3.5 group text-left focus:outline-none cursor-pointer"
         >
           <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl border border-[#E5C158]/50 bg-emerald-950/60 flex items-center justify-center p-2 shadow-inner group-hover:border-[#E5C158] transition-colors">
             <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#E5C158]" stroke="currentColor" strokeWidth="1.5">
-              <path d="M12 2L3 9v11a1 1 0 001 1h16a1 1 0 001-1V9l-9-7z" fill="none"/>
-              <path d="M12 7l6 5v7H6v-7l6-5z" fill="rgba(229,193,88,0.15)"/>
-              <path d="M9 21V12h6v9" stroke="currentColor"/>
-              <circle cx="12" cy="7" r="1.5" fill="#E5C158"/>
-              <path d="M5 14h2M17 14h2" stroke="#E5C158"/>
+              <path d="M12 2L3 9v11a1 1 0 001 1h16a1 1 0 001-1V9l-9-7z" fill="none" />
+              <path d="M12 7l6 5v7H6v-7l6-5z" fill="rgba(229,193,88,0.15)" />
+              <path d="M9 21V12h6v9" stroke="currentColor" />
+              <circle cx="12" cy="7" r="1.5" fill="#E5C158" />
+              <path d="M5 14h2M17 14h2" stroke="#E5C158" />
             </svg>
           </div>
           <div>
@@ -70,16 +70,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className={`relative py-2 text-base font-semibold transition-colors duration-200 cursor-pointer ${
-                  isActive ? 'text-white font-bold' : 'text-gray-300 hover:text-white'
-                }`}
+                className={`relative py-2 text-base font-semibold transition-colors duration-200 cursor-pointer ${isActive ? 'text-white font-bold' : 'text-gray-300 hover:text-white'
+                  }`}
               >
                 {link.name}
                 {isActive && (
-                  <motion.span 
+                  <motion.span
                     layoutId="activeNavIndicator"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E5C158] rounded-full shadow-[0_0_8px_#E5C158]" 
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E5C158] rounded-full shadow-[0_0_8px_#E5C158]"
                   />
                 )}
               </button>
@@ -117,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
       {/* Mobile Drawer Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20, height: 0 }}
             animate={{ opacity: 1, y: 0, height: "auto" }}
             exit={{ opacity: 0, y: -20, height: 0 }}
@@ -128,16 +127,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className={`text-left py-2.5 px-3.5 rounded-xl text-base font-semibold transition-colors ${
-                  activeSection === link.id
-                    ? 'bg-[#E5C158]/20 text-[#E5C158]'
-                    : 'text-white/90 hover:bg-white/10'
-                }`}
+                className={`text-left py-2.5 px-3.5 rounded-xl text-base font-semibold transition-colors ${activeSection === link.id
+                  ? 'bg-[#E5C158]/20 text-[#E5C158]'
+                  : 'text-white/90 hover:bg-white/10'
+                  }`}
               >
                 {link.name}
               </button>
             ))}
-            
+
             <div className="pt-3 border-t border-white/10 flex flex-col gap-3">
               <a
                 href="tel:+919876543210"

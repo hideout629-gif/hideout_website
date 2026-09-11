@@ -96,7 +96,7 @@ export const ExperiencesSection: React.FC = () => {
   };
 
   return (
-    <section id="experiences" className="relative min-h-fit py-14 md:py-24 pt-20 md:pt-28 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
+    <section id="experiences" className="homepage-section relative pb-10 md:pb-16 lg:pb-8 pt-4 md:pt-6 lg:pt-2 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
 
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#DFEADF]/60 via-[#EAF1EC] to-[#E5EEE7]" />
@@ -121,13 +121,13 @@ export const ExperiencesSection: React.FC = () => {
         </svg>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto -translate-y-6 md:-translate-y-12 lg:-translate-y-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: '32px' }}
+          style={{ marginBottom: '20px' }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center"
         >
           <div className="lg:col-span-3 hidden lg:flex flex-col space-y-2 text-xs font-bold uppercase tracking-[0.25em] text-gray-500 border-l-2 border-gray-300/60 pl-4">
@@ -279,7 +279,7 @@ export const ExperiencesSection: React.FC = () => {
         </AnimatePresence>
 
         {/* Section Bottom Controls Bar - Centered bare dots with no background container */}
-        <div className="relative flex items-center justify-center w-full" style={{ marginTop: '28px' }}>
+        <div className="relative flex items-center justify-center w-full" style={{ marginTop: '16px' }}>
           {/* Centered Pagination Dots without background container */}
           <div className="flex items-center gap-2.5">
             {filteredExperiences.map((item, idx) => (
@@ -288,8 +288,8 @@ export const ExperiencesSection: React.FC = () => {
                 onClick={() => scrollToCard(idx)}
                 title={`View ${item.title}`}
                 className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeDotIndex === idx
-                    ? 'w-8 bg-[#0E2C20] shadow-sm'
-                    : 'w-2.5 bg-[#0E2C20]/25 hover:bg-[#0E2C20]/45'
+                  ? 'w-8 bg-[#0E2C20] shadow-sm'
+                  : 'w-2.5 bg-[#0E2C20]/25 hover:bg-[#0E2C20]/45'
                   }`}
               />
             ))}

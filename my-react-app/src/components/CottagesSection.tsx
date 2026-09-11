@@ -32,7 +32,7 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
     : cottagesData.filter(c => c.category === activeTab);
 
   return (
-    <section id="cottages" className="relative min-h-fit py-14 md:py-24 pt-20 md:pt-28 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
+    <section id="cottages" className="homepage-section relative py-10 md:py-16 lg:py-8 pt-16 md:pt-20 lg:pt-16 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
 
       {/* Background Soft Misty Mountain Gradient & Pine Forest Backdrop Silhouette */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -79,7 +79,7 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: '32px' }}
+          style={{ marginBottom: '20px' }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
         >
 
@@ -155,7 +155,7 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
                   onClick={() => setActiveTab(tab.id)}
-                  style={{ padding: '14px 28px' }}
+                  style={{ padding: '10px 22px' }}
                   className={`flex items-center gap-3.5 rounded-full text-sm sm:text-base font-semibold transition-all cursor-pointer border ${isActive
                     ? 'bg-[#0E2C20] text-white border-[#0E2C20] shadow-md'
                     : 'bg-white/95 text-gray-800 hover:bg-white border-gray-200 shadow-sm'
@@ -184,8 +184,8 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            style={{ marginTop: '28px' }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
+            style={{ marginTop: '16px' }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 w-full"
           >
             {filteredCottages.map((cottage) => (
               <CottageCard

@@ -34,7 +34,7 @@ export const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="relative min-h-fit py-14 md:py-24 pt-20 md:pt-28 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
+    <section id="reviews" className="homepage-section relative py-10 md:py-16 lg:py-8 pt-16 md:pt-20 lg:pt-16 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
 
       {/* Background Soft Misty Mountain Gradient & Silhouette */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -70,7 +70,7 @@ export const ReviewsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: '28px' }}
+          style={{ marginBottom: '16px' }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
         >
 
@@ -201,7 +201,7 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Centered Pagination Dots */}
-        <div className="relative flex items-center justify-center w-full" style={{ marginTop: '28px' }}>
+        <div className="relative flex items-center justify-center w-full" style={{ marginTop: '16px' }}>
           <div className="flex items-center gap-2.5">
             {reviewsData.map((rev, idx) => (
               <button
@@ -209,8 +209,8 @@ export const ReviewsSection: React.FC = () => {
                 onClick={() => scrollToCard(idx)}
                 title={`Review by ${rev.name}`}
                 className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeDotIndex === idx
-                    ? 'w-8 bg-[#0E2C20] shadow-sm'
-                    : 'w-2.5 bg-[#0E2C20]/25 hover:bg-[#0E2C20]/45'
+                  ? 'w-8 bg-[#0E2C20] shadow-sm'
+                  : 'w-2.5 bg-[#0E2C20]/25 hover:bg-[#0E2C20]/45'
                   }`}
               />
             ))}

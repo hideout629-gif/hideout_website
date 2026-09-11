@@ -22,7 +22,7 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
       className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full group"
     >
       {/* Image Container with Badges and Overlay Info */}
-      <div className="relative h-64 overflow-hidden shrink-0">
+      <div className="relative h-64 lg:h-40 overflow-hidden shrink-0">
         <img
           src={cottage.featuredImage}
           alt={cottage.name}
@@ -51,8 +51,8 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
             setIsLiked(!isLiked);
           }}
           className={`absolute top-3.5 right-3.5 w-9 h-9 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${isLiked
-              ? 'bg-red-500 text-white border border-red-400 shadow-md'
-              : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
+            ? 'bg-red-500 text-white border border-red-400 shadow-md'
+            : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
             }`}
           title="Save to favorites"
         >
@@ -76,8 +76,9 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
 
       {/* Card Content Body - Explicit padding: 20px */}
       <div
-        className="flex-1 flex flex-col justify-between space-y-4"
+        className="flex-1 flex flex-col justify-between space-y-3 lg:space-y-2"
         style={{ padding: '20px' }}
+        data-desktop-compact
       >
         <div className="space-y-2">
           {/* Sub category Tag */}
@@ -145,7 +146,7 @@ export const CottageCard: React.FC<CottageCardProps> = ({ cottage, onSelectDetai
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => onSelectDetail(cottage)}
-            style={{ padding: '14px 34px' }}
+            style={{ padding: '10px 24px' }}
             className="bg-[#0E2C20] hover:bg-[#184F39] text-white font-bold text-xs rounded-full transition-all flex items-center gap-2.5 cursor-pointer shadow-md hover:shadow-lg shrink-0 whitespace-nowrap"
           >
             <span>View Details</span>

@@ -58,7 +58,7 @@ export const GallerySection: React.FC = () => {
   const bottomRowItems = filteredItems.slice(3, 7);
 
   return (
-    <section id="gallery" className="relative min-h-fit py-14 md:py-24 pt-20 md:pt-28 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
+    <section id="gallery" className="homepage-section relative py-10 md:py-16 lg:py-8 pt-16 md:pt-20 lg:pt-16 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
 
       {/* Background Soft Misty Mountain Gradient & Silhouette */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -94,7 +94,7 @@ export const GallerySection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: '32px' }}
+          style={{ marginBottom: '20px' }}
           className="gallery-description grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
         >
 
@@ -133,7 +133,7 @@ export const GallerySection: React.FC = () => {
 
         {/* Category Filter Pills Row */}
         <div
-          style={{ marginBottom: '28px' }}
+          style={{ marginBottom: '16px' }}
           className="gallery-filters flex flex-wrap items-center gap-3 md:gap-4"
         >
           {categories.map((cat) => {
@@ -153,8 +153,8 @@ export const GallerySection: React.FC = () => {
                 }}
                 style={{ padding: '12px 26px' }}
                 className={`flex items-center gap-3 rounded-full text-sm sm:text-base font-semibold transition-all cursor-pointer border ${isActive
-                    ? 'bg-[#0E2C20] text-white border-[#0E2C20] shadow-md'
-                    : 'bg-white/95 text-gray-800 hover:bg-white border-gray-200 shadow-sm'
+                  ? 'bg-[#0E2C20] text-white border-[#0E2C20] shadow-md'
+                  : 'bg-white/95 text-gray-800 hover:bg-white border-gray-200 shadow-sm'
                   }`}
               >
                 <span className={`shrink-0 ${isActive ? 'text-white' : 'text-[#1E4A37]'}`}>
@@ -192,7 +192,7 @@ export const GallerySection: React.FC = () => {
                     key={item.id}
                     whileHover={{ y: -8 }}
                     onClick={() => setSelectedItem(item)}
-                    className="group relative rounded-[22px] overflow-hidden h-72 sm:h-80 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200/80 bg-white"
+                    className="group relative rounded-[22px] overflow-hidden h-72 sm:h-80 lg:h-52 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200/80 bg-white"
                   >
                     <img
                       src={item.imageUrl}
@@ -213,8 +213,8 @@ export const GallerySection: React.FC = () => {
                       whileTap={{ scale: 0.9 }}
                       onClick={(e) => toggleLike(e, item.id)}
                       className={`absolute top-3.5 right-3.5 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${isLiked
-                          ? 'bg-red-500 text-white border border-red-400 shadow-md'
-                          : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
+                        ? 'bg-red-500 text-white border border-red-400 shadow-md'
+                        : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
                         }`}
                       title="Favorite photo"
                     >
@@ -257,7 +257,7 @@ export const GallerySection: React.FC = () => {
                       key={item.id}
                       whileHover={{ y: -8 }}
                       onClick={() => setSelectedItem(item)}
-                      className="group relative rounded-[22px] overflow-hidden h-64 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200/80 bg-white"
+                      className="group relative rounded-[22px] overflow-hidden h-64 lg:h-44 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-200/80 bg-white"
                     >
                       <img
                         src={item.imageUrl}
@@ -278,8 +278,8 @@ export const GallerySection: React.FC = () => {
                         whileTap={{ scale: 0.9 }}
                         onClick={(e) => toggleLike(e, item.id)}
                         className={`absolute top-3.5 right-3.5 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${isLiked
-                            ? 'bg-red-500 text-white border border-red-400 shadow-md'
-                            : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
+                          ? 'bg-red-500 text-white border border-red-400 shadow-md'
+                          : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
                           }`}
                         title="Favorite photo"
                       >
@@ -313,7 +313,7 @@ export const GallerySection: React.FC = () => {
 
         {/* Section Bottom Footer Controls */}
         <div
-          style={{ marginTop: '28px' }}
+          style={{ marginTop: '16px' }}
           className="gallery-actions flex flex-col sm:flex-row items-center justify-between gap-4 w-full pt-2"
         >
 
@@ -406,8 +406,8 @@ export const GallerySection: React.FC = () => {
                     key={tab.id}
                     onClick={() => setModalCategory(tab.id)}
                     className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${modalCategory === tab.id
-                        ? 'bg-[#0E2C20] text-white shadow-md'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      ? 'bg-[#0E2C20] text-white shadow-md'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                       }`}
                   >
                     {tab.label}
@@ -444,8 +444,8 @@ export const GallerySection: React.FC = () => {
                         whileTap={{ scale: 0.9 }}
                         onClick={(e) => toggleLike(e, item.id)}
                         className={`absolute top-3.5 right-3.5 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all cursor-pointer z-10 ${isLiked
-                            ? 'bg-red-500 text-white border border-red-400 shadow-md'
-                            : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
+                          ? 'bg-red-500 text-white border border-red-400 shadow-md'
+                          : 'bg-black/30 text-white border border-white/40 hover:bg-black/50'
                           }`}
                         title="Favorite photo"
                       >

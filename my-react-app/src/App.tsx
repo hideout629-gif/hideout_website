@@ -44,8 +44,8 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-[#FAF8F4] text-[#16241B] font-sans antialiased selection:bg-[#E5C158] selection:text-[#142E1F]">
-      
+    <div className="homepage min-h-screen w-full overflow-x-hidden bg-[#FAF8F4] text-[#16241B] font-sans antialiased selection:bg-[#E5C158] selection:text-[#142E1F]">
+
       {/* Navigation Bar */}
       <Navbar
         activeSection={activeSection}

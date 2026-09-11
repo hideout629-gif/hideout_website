@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
 
 
   return (
-    <section id="home" className="relative min-h-screen xl:h-screen xl:max-h-[1080px] xl:min-h-[820px] w-full bg-[#07130C] text-white pt-28 md:pt-32 pb-6 md:pb-8 flex flex-col justify-between overflow-hidden selection:bg-[#E5C158] selection:text-[#0B1910]" style={{ paddingLeft: 'clamp(1.5rem, 4vw, 4rem)', paddingRight: 'clamp(1.5rem, 4vw, 4rem)' }}>
+    <section id="home" className="homepage-section relative min-h-screen w-full bg-[#07130C] text-white pt-28 md:pt-32 pb-6 md:pb-8 flex flex-col justify-between overflow-hidden selection:bg-[#E5C158] selection:text-[#0B1910]" style={{ paddingLeft: 'clamp(1.5rem, 4vw, 4rem)', paddingRight: 'clamp(1.5rem, 4vw, 4rem)' }}>
       {/* Dynamic Background Image with Smooth Fade */}
       {heroSlides.map((slide, idx) => (
         <div

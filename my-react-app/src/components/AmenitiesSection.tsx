@@ -64,7 +64,7 @@ export const AmenitiesSection: React.FC = () => {
   ];
 
   return (
-    <section id="amenities" className="relative min-h-fit py-14 md:py-24 pt-20 md:pt-28 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
+    <section id="amenities" className="homepage-section relative py-10 md:py-16 lg:py-8 pt-16 md:pt-20 lg:pt-16 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
 
       {/* Background Soft Misty Mountain Gradient & Silhouette */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -100,7 +100,7 @@ export const AmenitiesSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: '28px' }}
+          style={{ marginBottom: '16px' }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"
         >
 
@@ -142,7 +142,7 @@ export const AmenitiesSection: React.FC = () => {
         </motion.div>
 
         {/* 8 Amenities Cards Grid (4 Columns across, row-gap: 28px) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 w-full" style={{ rowGap: '28px' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 w-full" style={{ rowGap: '16px' }}>
           {amenitiesList.map((item, idx) => (
             <motion.div
               key={idx}
@@ -154,7 +154,7 @@ export const AmenitiesSection: React.FC = () => {
               className="bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group"
             >
               {/* Image Portion with Dark Green Badge Box */}
-              <div className="relative h-48 overflow-hidden shrink-0">
+              <div className="relative h-48 lg:h-32 overflow-hidden shrink-0">
                 <img
                   src={item.image}
                   alt={item.title}
