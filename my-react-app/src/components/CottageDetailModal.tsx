@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Star, Users, Bed, Maximize, Bath, Check } from 'lucide-react';
+import { X, Users, Bed, Maximize, Bath, Check } from 'lucide-react';
 import type { Cottage } from '../types';
 
 interface CottageDetailModalProps {

@@ -4,7 +4,6 @@ import img82 from '../assets/image/image 82.jpeg';
 import img55 from '../assets/image/image 55.jpeg';
 import img49 from '../assets/image/image 49.jpeg';
 import img21 from '../assets/image/image 21.jpeg';
-import img45 from '../assets/image/image 45.jpeg';
 import img63 from '../assets/image/image 63.jpeg';
 import img73 from '../assets/image/image 73.jpeg';
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, CheckCircle2, Users, Calendar, Heart } from 'lucide-react';
 import { reviewsData } from '../data/reviewsData';
