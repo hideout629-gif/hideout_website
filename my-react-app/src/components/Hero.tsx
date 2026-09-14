@@ -111,18 +111,7 @@ export const Hero: React.FC<HeroProps> = () => {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#07130C]/85 via-transparent to-[#07130C]/95" />
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-radial from-[#1E422D]/30 to-transparent pointer-events-none z-0" />
 
-      {/* Top Right Handwritten Script Accent ("Nature Feels Better Here") */}
-      <div className="hidden xl:flex flex-col items-end gap-1 absolute top-28 right-12 lg:right-16 xl:right-20 z-20 pointer-events-none animate-float">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-5 h-5 text-[#E5C158] animate-pulse" />
-          <span className="font-script text-3xl xl:text-4xl text-[#E5C158] -rotate-3 drop-shadow-[0_2px_12px_rgba(229,193,88,0.6)]">
-            Nature Feels Better Here
-          </span>
-        </div>
-        <svg width="150" height="24" viewBox="0 0 150 24" fill="none" className="text-[#E5C158]/70 -mt-2">
-          <path d="M5 18 Q 75 2 145 18" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" fill="none" />
-        </svg>
-      </div>
+
 
       {/* Main Content Body Container - Vertically Centered & Safe Padding */}
       <div className="relative z-10 w-full max-w-[1750px] mx-auto my-auto flex-1 flex flex-col justify-center py-6 sm:py-8" style={{ paddingLeft: 'clamp(2rem, 5vw, 6rem)', paddingRight: 'clamp(2rem, 5vw, 6rem)' }}>
@@ -287,6 +276,19 @@ export const Hero: React.FC<HeroProps> = () => {
             transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 xl:col-span-5 w-full flex flex-col items-center lg:items-end justify-center mt-6 lg:mt-0"
           >
+            {/* Handwritten Script Accent ("Nature Feels Better Here") - Placed cleanly above video player */}
+            <div className="flex flex-col items-end gap-0.5 mb-2 sm:mb-3 pointer-events-none animate-float self-center lg:self-end pr-2">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#E5C158] animate-pulse" />
+                <span className="font-script text-2xl sm:text-3xl xl:text-4xl text-[#E5C158] -rotate-2 drop-shadow-[0_2px_12px_rgba(229,193,88,0.6)]">
+                  Nature Feels Better Here
+                </span>
+              </div>
+              <svg width="140" height="18" viewBox="0 0 150 24" fill="none" className="text-[#E5C158]/70 -mt-1">
+                <path d="M5 18 Q 75 2 145 18" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" fill="none" />
+              </svg>
+            </div>
+
             <div
               className="relative w-full max-w-md xl:max-w-lg aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5] rounded-[28px] border-2 border-[#E5C158]/50 shadow-[0_20px_60px_rgba(0,0,0,0.85),0_0_35px_rgba(229,193,88,0.25)] group bg-[#07130C]"
               style={{ padding: '7px' }}
