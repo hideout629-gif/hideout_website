@@ -309,87 +309,91 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
             transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 xl:col-span-5 w-full flex flex-col items-center lg:items-end justify-center mt-6 lg:mt-0"
           >
-            <div className="relative w-full max-w-md xl:max-w-lg aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5] rounded-[28px] overflow-hidden border-2 border-[#E5C158]/50 shadow-[0_20px_60px_rgba(0,0,0,0.85),0_0_35px_rgba(229,193,88,0.25)] group bg-[#07130C]">
+            <div
+              className="relative w-full max-w-md xl:max-w-lg aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5] rounded-[28px] border-2 border-[#E5C158]/50 shadow-[0_20px_60px_rgba(0,0,0,0.85),0_0_35px_rgba(229,193,88,0.25)] group bg-[#07130C]"
+              style={{ padding: '7px' }}
+            >
+              <div className="relative w-full h-full rounded-[21px] overflow-hidden bg-black">
+                {/* Video Element */}
+                <video
+                  key={heroVideos[currentVideoIdx].id}
+                  src={heroVideos[currentVideoIdx].src}
+                  autoPlay
+                  muted={isMuted}
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-              {/* Video Element */}
-              <video
-                key={heroVideos[currentVideoIdx].id}
-                src={heroVideos[currentVideoIdx].src}
-                autoPlay
-                muted={isMuted}
-                loop
-                playsInline
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-
-              {/* Top Controls Overlay */}
-              <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#E5C158]/40 text-[#E5C158] text-[11px] font-extrabold uppercase tracking-widest shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
-                  <span>RESORT REEL #{currentVideoIdx + 1}</span>
-                </div>
-                <button
-                  onClick={() => setIsMuted(!isMuted)}
-                  className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-md"
-                  title={isMuted ? "Unmute audio" : "Mute audio"}
-                >
-                  {isMuted ? <VolumeX className="w-4 h-4 text-gray-300" /> : <Volume2 className="w-4 h-4 text-[#E5C158]" />}
-                </button>
-              </div>
-
-              {/* Dark Gradient Overlay at Bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
-
-              {/* Bottom Info & Controls */}
-              <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 flex flex-col gap-3 z-20">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <div className="text-[10px] uppercase font-extrabold text-[#E5C158] tracking-widest">
-                      Living Experience
-                    </div>
-                    <div className="text-base font-bold text-white font-serif drop-shadow-md">
-                      {heroVideos[currentVideoIdx].title}
-                    </div>
+                {/* Top Controls Overlay */}
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#E5C158]/40 text-[#E5C158] text-[11px] font-extrabold uppercase tracking-widest shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+                    <span>RESORT REEL #{currentVideoIdx + 1}</span>
                   </div>
                   <button
-                    onClick={() => setIsVideoOpen(true)}
-                    className="w-9 h-9 rounded-full bg-[#E5C158] text-[#0B1910] hover:scale-110 flex items-center justify-center shadow-lg transition-all cursor-pointer"
-                    title="Watch Fullscreen"
+                    onClick={() => setIsMuted(!isMuted)}
+                    className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-md"
+                    title={isMuted ? "Unmute audio" : "Mute audio"}
                   >
-                    <Maximize2 className="w-4 h-4" />
+                    {isMuted ? <VolumeX className="w-4 h-4 text-gray-300" /> : <Volume2 className="w-4 h-4 text-[#E5C158]" />}
                   </button>
                 </div>
 
-                {/* Video Navigation Bar */}
-                <div className="flex items-center justify-between border-t border-white/15 pt-3">
-                  <div className="flex items-center gap-1.5 overflow-x-auto max-w-[200px] no-scrollbar">
-                    {heroVideos.map((v, i) => (
-                      <button
-                        key={v.id}
-                        onClick={() => setCurrentVideoIdx(i)}
-                        className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                          i === currentVideoIdx ? 'w-6 bg-[#E5C158]' : 'w-2 bg-white/40 hover:bg-white/70'
-                        }`}
-                        title={v.title}
-                      />
-                    ))}
+                {/* Dark Gradient Overlay at Bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+
+                {/* Bottom Info & Controls */}
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 flex flex-col gap-3 z-20">
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-0.5">
+                      <div className="text-[10px] uppercase font-extrabold text-[#E5C158] tracking-widest">
+                        Living Experience
+                      </div>
+                      <div className="text-base font-bold text-white font-serif drop-shadow-md">
+                        {heroVideos[currentVideoIdx].title}
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => setIsVideoOpen(true)}
+                      className="w-9 h-9 rounded-full bg-[#E5C158] text-[#0B1910] hover:scale-110 flex items-center justify-center shadow-lg transition-all cursor-pointer"
+                      title="Watch Fullscreen"
+                    >
+                      <Maximize2 className="w-4 h-4" />
+                    </button>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={prevVideo}
-                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
-                      title="Previous Video"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={nextVideo}
-                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
-                      title="Next Video"
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
+                  {/* Video Navigation Bar */}
+                  <div className="flex items-center justify-between border-t border-white/15 pt-3">
+                    <div className="flex items-center gap-1.5 overflow-x-auto max-w-[200px] no-scrollbar">
+                      {heroVideos.map((v, i) => (
+                        <button
+                          key={v.id}
+                          onClick={() => setCurrentVideoIdx(i)}
+                          className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                            i === currentVideoIdx ? 'w-6 bg-[#E5C158]' : 'w-2 bg-white/40 hover:bg-white/70'
+                          }`}
+                          title={v.title}
+                        />
+                      ))}
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={prevVideo}
+                        className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                        title="Previous Video"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={nextVideo}
+                        className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                        title="Next Video"
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
