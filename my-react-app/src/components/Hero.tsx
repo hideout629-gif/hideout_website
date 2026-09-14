@@ -203,41 +203,41 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
 
                 {/* Highlights Grid with Dividers */}
                 <div
-                  className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 rounded-2xl sm:rounded-full bg-black/40 backdrop-blur-md border border-white/15 w-full shadow-2xl items-center"
-                  style={{ padding: '20px', minHeight: '84px' }}
+                  className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 rounded-2xl sm:rounded-full bg-black/40 backdrop-blur-md border border-white/15 w-full shadow-2xl items-center"
+                  style={{ padding: '10px 18px', minHeight: '56px' }}
                 >
-                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 border-r border-white/20 transition-transform h-full">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
-                      <Mountain className="w-5 h-5" />
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-2.5 sm:gap-3 px-2 sm:px-3 border-r border-white/20 transition-transform h-full">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                      <Mountain className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
-                    <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
+                    <span className="text-xs sm:text-sm font-semibold text-white/95 leading-tight">
                       Breathtaking<br />Valley Views
                     </span>
                   </motion.div>
 
-                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 sm:border-r border-white/20 transition-transform h-full">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
-                      <Leaf className="w-5 h-5" />
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-2.5 sm:gap-3 px-2 sm:px-3 sm:border-r border-white/20 transition-transform h-full">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                      <Leaf className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
-                    <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
+                    <span className="text-xs sm:text-sm font-semibold text-white/95 leading-tight">
                       Luxury Wooden<br />Cottages
                     </span>
                   </motion.div>
 
-                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 border-r border-white/20 transition-transform h-full">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
-                      <Coffee className="w-5 h-5" />
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-2.5 sm:gap-3 px-2 sm:px-3 border-r border-white/20 transition-transform h-full">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                      <Coffee className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
-                    <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
+                    <span className="text-xs sm:text-sm font-semibold text-white/95 leading-tight">
                       Authentic Tea<br />Experience
                     </span>
                   </motion.div>
 
-                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 transition-transform h-full">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
-                      <Heart className="w-5 h-5" />
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-2.5 sm:gap-3 px-2 sm:px-3 transition-transform h-full">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                      <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
-                    <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
+                    <span className="text-xs sm:text-sm font-semibold text-white/95 leading-tight">
                       320+<br />Happy Guests
                     </span>
                   </motion.div>
@@ -249,8 +249,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ scale: 1.03, y: -2 }}
-                  className="w-fit inline-flex items-center gap-5 sm:gap-6 rounded-full bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-xl border border-[#E5C158]/40 shadow-[0_10px_35px_rgba(0,0,0,0.7),0_0_25px_rgba(229,193,88,0.2)] group cursor-pointer"
-                  style={{ padding: '20px', minHeight: '92px' }}
+                  className="w-fit inline-flex items-center gap-4 sm:gap-5 rounded-full bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-xl border border-[#E5C158]/40 shadow-[0_10px_35px_rgba(0,0,0,0.7),0_0_25px_rgba(229,193,88,0.2)] group cursor-pointer"
+                  style={{ padding: '12px 20px', minHeight: '64px' }}
                 >
                   <div className="flex items-center gap-4">
                     <div className="relative flex items-center justify-center w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#E5C158]/15 border-2 border-[#E5C158]/60 text-[#E5C158] font-bold text-xl shadow-inner group-hover:scale-110 group-hover:border-[#E5C158] group-hover:shadow-[0_0_20px_rgba(229,193,88,0.6)] transition-all duration-300">
