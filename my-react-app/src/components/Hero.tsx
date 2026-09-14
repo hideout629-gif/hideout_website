@@ -7,7 +7,6 @@ import {
   Mountain,
   Coffee,
   Heart,
-  ArrowRight,
   Sparkles,
   X,
   Volume2,
@@ -30,7 +29,7 @@ import video10 from '../assets/video/viedo10.mp4';
 import video11 from '../assets/video/viedo11.mp4';
 
 interface HeroProps {
-  onExploreClick: () => void;
+  onExploreClick?: () => void;
 }
 
 const heroSlides = [
@@ -68,7 +67,7 @@ const heroVideos = [
   { id: 11, src: video11, title: 'Campfire Under the Stars' },
 ];
 
-export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
+export const Hero: React.FC<HeroProps> = () => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [currentVideoIdx, setCurrentVideoIdx] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
@@ -171,28 +170,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
               className="text-base sm:text-lg md:text-xl text-gray-200/90 leading-relaxed font-sans max-w-xl xl:max-w-2xl font-normal"
             >
               Experience the perfect blend of luxury and nature. Relax, Reconnect & Rejuvenate in our hand-built wooden mountain cottages.
-            </motion.p>
-
-            {/* Action Buttons Row */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex flex-wrap items-center gap-4 sm:gap-5"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(229, 193, 88, 0.45)" }}
-                whileTap={{ scale: 0.96 }}
-                onClick={onExploreClick}
-                className="h-12 sm:h-13 bg-[#E5C158] text-[#0B1910] font-extrabold rounded-full text-base flex items-center gap-3 shadow-2xl cursor-pointer group"
-                style={{ paddingLeft: '24px', paddingRight: '24px' }}
-              >
-                <span>Explore Cottages</span>
-                <ArrowRight className="w-4 h-4 text-[#0B1910] stroke-[3] group-hover:translate-x-1.5 transition-transform" />
-              </motion.button>
-            </motion.div>
-
-            {/* Highlights Grid & Rich Animated Rating Block */}
+            </motion.p>            {/* Highlights Grid & Rich Animated Rating Block */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
