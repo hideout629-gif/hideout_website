@@ -212,60 +212,60 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Section Bottom Social Proof Metrics Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-4 border-t border-gray-200/60" style={{ marginTop: '24px' }}>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-4 border-t border-[#0E2C20]/40" style={{ marginTop: '24px' }}>
 
           {/* Left Tagline & Doodle */}
           <div className="flex items-center gap-2 text-left">
-            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-[#1E4A37] stroke-current stroke-2 opacity-70">
+            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-[#061C13] stroke-current stroke-2 opacity-90">
               <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#5B826D] leading-tight">
+            <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#061C13] leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
               CREATING MEMORIES<br />
-              <span className="text-gray-400 font-normal">IN THE HILLS</span>
+              <span className="text-[#081F15] font-bold">IN THE HILLS</span>
             </div>
           </div>
 
           {/* Center Social Proof Metrics */}
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-bold text-[#0E2C20]">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-bold text-[#061C13]">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#DCE7DF] text-[#0E2C20] flex items-center justify-center shadow-inner">
+              <div className="w-9 h-9 rounded-full bg-[#0E2C20] text-white flex items-center justify-center shadow-md border border-[#0E2C20]">
                 <Users className="w-4.5 h-4.5" />
               </div>
               <div className="text-left">
-                <div className="text-sm font-extrabold">320+</div>
-                <div className="text-[11px] text-gray-500 font-medium">Happy Guests</div>
+                <div className="text-sm sm:text-base font-black text-[#061C13] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">320+</div>
+                <div className="text-xs text-[#081F15] font-bold drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">Happy Guests</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#FFF5D6] text-[#8A5A00] flex items-center justify-center shadow-inner">
+              <div className="w-9 h-9 rounded-full bg-[#0E2C20] text-[#FFC843] flex items-center justify-center shadow-md border border-[#0E2C20]">
                 <Star className="w-4.5 h-4.5 fill-[#FFC843] text-[#FFC843]" />
               </div>
               <div className="text-left">
-                <div className="text-sm font-extrabold">4.9/5</div>
-                <div className="text-[11px] text-gray-500 font-medium">Average Rating</div>
+                <div className="text-sm sm:text-base font-black text-[#061C13] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">4.9/5</div>
+                <div className="text-xs text-[#081F15] font-bold drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">Average Rating</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#DCE7DF] text-[#0E2C20] flex items-center justify-center shadow-inner">
-                <Heart className="w-4.5 h-4.5 text-[#0E2C20]" />
+              <div className="w-9 h-9 rounded-full bg-[#0E2C20] text-white flex items-center justify-center shadow-md border border-[#0E2C20]">
+                <Heart className="w-4.5 h-4.5 text-white fill-white/20" />
               </div>
               <div className="text-left">
-                <div className="text-sm font-extrabold">95%</div>
-                <div className="text-[11px] text-gray-500 font-medium">Would Recommend</div>
+                <div className="text-sm sm:text-base font-black text-[#061C13] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">95%</div>
+                <div className="text-xs text-[#081F15] font-bold drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">Would Recommend</div>
               </div>
             </div>
           </div>
 
           {/* Right Tagline */}
           <div className="flex items-center gap-2 text-right">
-            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-[#1E4A37] stroke-current stroke-2 opacity-70">
+            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-[#061C13] stroke-current stroke-2 opacity-90">
               <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#5B826D] leading-tight">
+            <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#061C13] leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
               HIDEOUT RESORT<br />
-              <span className="text-gray-400 font-normal">AUTHENTIC REVIEWS</span>
+              <span className="text-[#081F15] font-bold">AUTHENTIC REVIEWS</span>
             </div>
           </div>
 
