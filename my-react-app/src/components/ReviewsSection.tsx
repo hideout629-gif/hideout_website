@@ -45,8 +45,8 @@ export const ReviewsSection: React.FC = () => {
           alt="Nilgiri Mountain Background"
           className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-white/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
@@ -64,30 +64,30 @@ export const ReviewsSection: React.FC = () => {
           {/* Left Main Title & Subtitle */}
           <div className="lg:col-span-8 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0E2C20] text-white border border-[#0E2C20] shadow-md text-[10px] font-extrabold tracking-widest uppercase">
-                <span className="w-4 h-4 rounded-full bg-white/20 text-white flex items-center justify-center shrink-0 text-[9px]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-md text-[10px] font-extrabold tracking-widest uppercase">
+                <span className="w-4 h-4 rounded-full bg-white text-[#0E2C20] flex items-center justify-center shrink-0 text-[9px] font-bold">
                   ★
                 </span>
                 <span>GUEST TESTIMONIALS</span>
               </div>
-              <div className="h-px w-20 bg-[#0E2C20]/30 hidden sm:block" />
+              <div className="h-px w-20 bg-white/30 hidden sm:block" />
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#061C13] leading-[1.15]">
-              Loved By <span className="font-serif italic font-normal text-[#061C13]">Mountain</span> Travelers
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-white leading-[1.15] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              Loved By <span className="font-serif italic font-normal text-white">Mountain</span> Travelers
             </h2>
 
-            <p className="text-sm md:text-base text-[#081F15] font-semibold max-w-2xl leading-relaxed font-sans drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+            <p className="text-sm md:text-base text-white/90 font-medium max-w-2xl leading-relaxed font-sans drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
               Over 320+ couples and families have created everlasting memories at Hideout. Here is what they have to say about their stay.
             </p>
           </div>
 
           {/* Right Side Handwritten Script Accent */}
           <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-end">
-            <div className="font-script text-3xl sm:text-4xl text-[#061C13] font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+            <div className="font-script text-3xl sm:text-4xl text-white font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               "Real People<br />Real Stories<br />Beautiful Stays"
             </div>
-            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#061C13] stroke-current stroke-2 mt-1">
+            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-white/80 stroke-current stroke-2 mt-1">
               <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round" />
             </svg>
           </div>
@@ -203,8 +203,8 @@ export const ReviewsSection: React.FC = () => {
                 onClick={() => scrollToCard(idx)}
                 title={`Review by ${rev.name}`}
                 className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeDotIndex === idx
-                  ? 'w-8 bg-[#0E2C20] shadow-sm'
-                  : 'w-2.5 bg-[#0E2C20]/25 hover:bg-[#0E2C20]/45'
+                  ? 'w-8 bg-white shadow-md'
+                  : 'w-2.5 bg-white/40 hover:bg-white/70'
                   }`}
               />
             ))}
@@ -212,60 +212,60 @@ export const ReviewsSection: React.FC = () => {
         </div>
 
         {/* Section Bottom Social Proof Metrics Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-4 border-t border-[#0E2C20]/40" style={{ marginTop: '24px' }}>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-4 border-t border-white/30" style={{ marginTop: '24px' }}>
 
           {/* Left Tagline & Doodle */}
           <div className="flex items-center gap-2 text-left">
-            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-[#061C13] stroke-current stroke-2 opacity-90">
+            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-white stroke-current stroke-2 opacity-80">
               <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#061C13] leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+            <div className="text-[10px] font-extrabold uppercase tracking-widest text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
               CREATING MEMORIES<br />
-              <span className="text-[#081F15] font-bold">IN THE HILLS</span>
+              <span className="text-white/80 font-bold">IN THE HILLS</span>
             </div>
           </div>
 
           {/* Center Social Proof Metrics */}
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-bold text-[#061C13]">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-bold text-white">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#0E2C20] text-white flex items-center justify-center shadow-md border border-[#0E2C20]">
+              <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center shadow-md border border-white/30">
                 <Users className="w-4.5 h-4.5" />
               </div>
               <div className="text-left">
-                <div className="text-sm sm:text-base font-black text-[#061C13] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">320+</div>
-                <div className="text-xs text-[#081F15] font-bold drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">Happy Guests</div>
+                <div className="text-sm sm:text-base font-black text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">320+</div>
+                <div className="text-xs text-white/90 font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Happy Guests</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#0E2C20] text-[#FFC843] flex items-center justify-center shadow-md border border-[#0E2C20]">
+              <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-[#FFC843] flex items-center justify-center shadow-md border border-white/30">
                 <Star className="w-4.5 h-4.5 fill-[#FFC843] text-[#FFC843]" />
               </div>
               <div className="text-left">
-                <div className="text-sm sm:text-base font-black text-[#061C13] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">4.9/5</div>
-                <div className="text-xs text-[#081F15] font-bold drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">Average Rating</div>
+                <div className="text-sm sm:text-base font-black text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">4.9/5</div>
+                <div className="text-xs text-white/90 font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Average Rating</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#0E2C20] text-white flex items-center justify-center shadow-md border border-[#0E2C20]">
+              <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center shadow-md border border-white/30">
                 <Heart className="w-4.5 h-4.5 text-white fill-white/20" />
               </div>
               <div className="text-left">
-                <div className="text-sm sm:text-base font-black text-[#061C13] drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">95%</div>
-                <div className="text-xs text-[#081F15] font-bold drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">Would Recommend</div>
+                <div className="text-sm sm:text-base font-black text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">95%</div>
+                <div className="text-xs text-white/90 font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Would Recommend</div>
               </div>
             </div>
           </div>
 
           {/* Right Tagline */}
           <div className="flex items-center gap-2 text-right">
-            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-[#061C13] stroke-current stroke-2 opacity-90">
+            <svg viewBox="0 0 60 20" fill="none" className="w-10 h-4 text-white stroke-current stroke-2 opacity-80">
               <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#061C13] leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+            <div className="text-[10px] font-extrabold uppercase tracking-widest text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
               HIDEOUT RESORT<br />
-              <span className="text-[#081F15] font-bold">AUTHENTIC REVIEWS</span>
+              <span className="text-white/80 font-bold">AUTHENTIC REVIEWS</span>
             </div>
           </div>
 

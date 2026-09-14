@@ -68,8 +68,8 @@ export const GallerySection: React.FC = () => {
           alt="Nilgiri Mountain Background"
           className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-white/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
@@ -87,30 +87,30 @@ export const GallerySection: React.FC = () => {
           {/* Left Main Title & Subtitle */}
           <div className="lg:col-span-8 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0E2C20] text-white border border-[#0E2C20] shadow-md text-[10px] font-extrabold tracking-widest uppercase">
-                <span className="w-4 h-4 rounded-full bg-white/20 text-white flex items-center justify-center shrink-0">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-md text-[10px] font-extrabold tracking-widest uppercase">
+                <span className="w-4 h-4 rounded-full bg-white text-[#0E2C20] flex items-center justify-center shrink-0">
                   <Camera className="w-2.5 h-2.5" />
                 </span>
                 <span>VISUAL TOUR</span>
               </div>
-              <div className="h-px w-20 bg-[#0E2C20]/30 hidden sm:block" />
+              <div className="h-px w-20 bg-white/30 hidden sm:block" />
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#061C13] leading-[1.15]">
-              Resort <span className="font-serif italic font-normal text-[#061C13]">Photo Gallery</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-white leading-[1.15] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              Resort <span className="font-serif italic font-normal text-white">Photo Gallery</span>
             </h2>
 
-            <p className="text-sm md:text-base text-[#081F15] font-semibold max-w-2xl leading-relaxed font-sans drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+            <p className="text-sm md:text-base text-white/90 font-medium max-w-2xl leading-relaxed font-sans drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
               Take a peak into life at Hideout — from misty mornings on private balconies to cozy evenings by the fireplace.
             </p>
           </div>
 
           {/* Right Side Handwritten Script Accent */}
           <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-end">
-            <div className="font-script text-3xl sm:text-4xl text-[#061C13] font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+            <div className="font-script text-3xl sm:text-4xl text-white font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               "Moments Make<br />Memories"
             </div>
-            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#061C13] stroke-current stroke-2 mt-1">
+            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-white/80 stroke-current stroke-2 mt-1">
               <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round" />
             </svg>
           </div>
@@ -139,11 +139,11 @@ export const GallerySection: React.FC = () => {
                 }}
                 style={{ padding: '12px 26px' }}
                 className={`flex items-center gap-3 rounded-full text-sm sm:text-base font-bold transition-all cursor-pointer border ${isActive
-                  ? 'bg-[#0E2C20] text-white border-[#0E2C20] shadow-md'
-                  : 'bg-white/95 text-[#061C13] hover:bg-white border-gray-300/90 shadow-sm hover:text-[#0E2C20]'
+                  ? 'bg-white text-[#0E2C20] border-white shadow-md'
+                  : 'bg-black/40 text-white hover:bg-black/60 border-white/30 backdrop-blur-md shadow-sm'
                   }`}
               >
-                <span className={`shrink-0 ${isActive ? 'text-white' : 'text-[#061C13]'}`}>
+                <span className={`shrink-0 ${isActive ? 'text-[#0E2C20]' : 'text-white'}`}>
                   {cat.icon}
                 </span>
                 <span className="whitespace-nowrap">{cat.label}</span>

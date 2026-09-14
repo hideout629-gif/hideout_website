@@ -83,8 +83,8 @@ export const AmenitiesSection: React.FC = () => {
           alt="Nilgiri Mountain Background"
           className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-white/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
@@ -100,36 +100,36 @@ export const AmenitiesSection: React.FC = () => {
         >
 
           {/* Left Side Feature Tag List */}
-          <div className="lg:col-span-3 hidden lg:flex flex-col space-y-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#061C13] border-l-2 border-[#0E2C20]/40 pl-4">
-            <div className="flex items-center gap-2 text-[#061C13] font-extrabold">
-              <span className="w-4 h-4 rounded-full bg-[#0E2C20] text-white flex items-center justify-center text-[9px]">🍃</span>
+          <div className="lg:col-span-3 hidden lg:flex flex-col space-y-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-white border-l-2 border-white/30 pl-4">
+            <div className="flex items-center gap-2 text-white font-extrabold">
+              <span className="w-4 h-4 rounded-full bg-white text-[#0E2C20] flex items-center justify-center text-[9px] font-bold">🍃</span>
               <span>THOUGHTFUL AMENITIES</span>
             </div>
-            <div className="text-[#081F15] font-bold">FOR A BETTER TOMORROW</div>
+            <div className="text-white/80 font-bold">FOR A BETTER TOMORROW</div>
           </div>
 
           {/* Center Main Headline & Tagline */}
           <div className="lg:col-span-6 text-center space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0E2C20] text-white border border-[#0E2C20] shadow-md text-[10px] font-extrabold tracking-widest uppercase">
-              <span className="w-4 h-4 rounded-full bg-white/20 text-white flex items-center justify-center text-[9px] shrink-0">👑</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-md text-[10px] font-extrabold tracking-widest uppercase">
+              <span className="w-4 h-4 rounded-full bg-white text-[#0E2C20] flex items-center justify-center text-[9px] shrink-0 font-bold">👑</span>
               <span>PREMIUM HOSPITALITY</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#061C13] leading-[1.15]">
-              Resort Facilities & <span className="font-serif italic font-normal text-[#061C13]">Amenities</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-white leading-[1.15] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              Resort Facilities & <span className="font-serif italic font-normal text-white">Amenities</span>
             </h2>
 
-            <p className="text-sm md:text-base text-[#081F15] font-semibold max-w-xl mx-auto leading-relaxed font-sans drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+            <p className="text-sm md:text-base text-white/90 font-medium max-w-xl mx-auto leading-relaxed font-sans drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
               Everything you need for a comfortable, luxurious, and hassle-free mountain vacation.
             </p>
           </div>
 
           {/* Right Side Handwritten Script Accent */}
           <div className="lg:col-span-3 flex flex-col items-start lg:items-end justify-end">
-            <div className="font-script text-3xl sm:text-4xl text-[#061C13] font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+            <div className="font-script text-3xl sm:text-4xl text-white font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               "More Than<br />A Stay"
             </div>
-            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#061C13] stroke-current stroke-2 mt-1">
+            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-white/80 stroke-current stroke-2 mt-1">
               <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round" />
             </svg>
           </div>

@@ -107,8 +107,8 @@ export const ExperiencesSection: React.FC = () => {
           alt="Nilgiri Mountain Background"
           className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-white/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto -translate-y-6 md:-translate-y-12 lg:-translate-y-24">
@@ -120,51 +120,51 @@ export const ExperiencesSection: React.FC = () => {
           style={{ marginBottom: '20px' }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center"
         >
-          <div className="lg:col-span-3 hidden lg:flex flex-col space-y-2 text-xs font-bold uppercase tracking-[0.25em] text-[#061C13] border-l-2 border-[#0E2C20]/40 pl-4">
-            <div className="text-[#061C13] font-extrabold flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#061C13]" />
+          <div className="lg:col-span-3 hidden lg:flex flex-col space-y-2 text-xs font-bold uppercase tracking-[0.25em] text-white border-l-2 border-white/30 pl-4">
+            <div className="text-white font-extrabold flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-white" />
               <span>EXPLORE</span>
             </div>
             <button
               onClick={() => handleFilterChange(activeFilter === 'relax' ? 'all' : 'relax')}
-              className={`text-left transition-colors cursor-pointer ${activeFilter === 'relax' ? 'text-[#061C13] font-black scale-105' : 'text-[#0B2418] hover:text-[#061C13] font-bold'}`}
+              className={`text-left transition-colors cursor-pointer ${activeFilter === 'relax' ? 'text-white font-black scale-105' : 'text-white/80 hover:text-white font-semibold'}`}
             >
               • RELAX
             </button>
             <button
               onClick={() => handleFilterChange(activeFilter === 'reconnect' ? 'all' : 'reconnect')}
-              className={`text-left transition-colors cursor-pointer ${activeFilter === 'reconnect' ? 'text-[#061C13] font-black scale-105' : 'text-[#0B2418] hover:text-[#061C13] font-bold'}`}
+              className={`text-left transition-colors cursor-pointer ${activeFilter === 'reconnect' ? 'text-white font-black scale-105' : 'text-white/80 hover:text-white font-semibold'}`}
             >
               • RECONNECT
             </button>
             <button
               onClick={() => handleFilterChange(activeFilter === 'rejuvenate' ? 'all' : 'rejuvenate')}
-              className={`text-left transition-colors cursor-pointer ${activeFilter === 'rejuvenate' ? 'text-[#061C13] font-black scale-105' : 'text-[#0B2418] hover:text-[#061C13] font-bold'}`}
+              className={`text-left transition-colors cursor-pointer ${activeFilter === 'rejuvenate' ? 'text-white font-black scale-105' : 'text-white/80 hover:text-white font-semibold'}`}
             >
               • REJUVENATE
             </button>
           </div>
 
           <div className="lg:col-span-6 text-center space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0E2C20] text-white border border-[#0E2C20] shadow-md text-[10px] font-extrabold tracking-widest uppercase">
-              <span className="w-4 h-4 rounded-full bg-white/20 text-white flex items-center justify-center text-[9px] shrink-0">🍃</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-md text-[10px] font-extrabold tracking-widest uppercase">
+              <span className="w-4 h-4 rounded-full bg-white text-[#0E2C20] flex items-center justify-center text-[9px] shrink-0 font-bold">🍃</span>
               <span>UNFORGETTABLE MOMENTS</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#061C13] leading-[1.15]">
-              Curated Resort <span className="font-serif italic font-normal text-[#061C13]">Experiences</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-white leading-[1.15] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              Curated Resort <span className="font-serif italic font-normal text-white">Experiences</span>
             </h2>
 
-            <p className="text-sm md:text-base text-[#081F15] font-semibold max-w-xl mx-auto leading-relaxed font-sans drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+            <p className="text-sm md:text-base text-white/90 font-medium max-w-xl mx-auto leading-relaxed font-sans drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
               Immerse yourself in nature's tranquil beauty with activities designed to refresh your mind, body, and spirit.
             </p>
           </div>
 
           <div className="lg:col-span-3 flex flex-col items-center lg:items-end justify-center">
-            <div className="font-script text-3xl sm:text-4xl text-[#061C13] font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+            <div className="font-script text-3xl sm:text-4xl text-white font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
               "Nature Heals<br />Differently Here"
             </div>
-            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#061C13] stroke-current stroke-2 mt-1">
+            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-white/80 stroke-current stroke-2 mt-1">
               <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round" />
             </svg>
           </div>
@@ -288,8 +288,8 @@ export const ExperiencesSection: React.FC = () => {
                 onClick={() => scrollToCard(idx)}
                 title={`View ${item.title}`}
                 className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${activeDotIndex === idx
-                  ? 'w-8 bg-[#0E2C20] shadow-sm'
-                  : 'w-2.5 bg-[#0E2C20]/25 hover:bg-[#0E2C20]/45'
+                  ? 'w-8 bg-white shadow-md'
+                  : 'w-2.5 bg-white/40 hover:bg-white/70'
                   }`}
               />
             ))}
@@ -297,12 +297,12 @@ export const ExperiencesSection: React.FC = () => {
 
           {/* Right Mountain Vector Doodle & Tagline */}
           <div className="absolute right-0 hidden md:flex items-center gap-2 text-right">
-            <svg viewBox="0 0 60 20" fill="none" className="w-12 h-5 text-[#1E4A37] stroke-current stroke-2 opacity-70">
+            <svg viewBox="0 0 60 20" fill="none" className="w-12 h-5 text-white stroke-current stroke-2 opacity-80">
               <path d="M3 17 L15 5 L25 14 L38 3 L57 17" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <div className="text-[10px] font-extrabold uppercase tracking-widest text-[#061C13] leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+            <div className="text-[10px] font-extrabold uppercase tracking-widest text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
               MORE THAN A STAY<br />
-              <span className="text-[#081F15] font-bold">A DEEPER CONNECTION</span>
+              <span className="text-white/80 font-bold">A DEEPER CONNECTION</span>
             </div>
           </div>
         </div>
