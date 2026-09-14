@@ -190,19 +190,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
                 <span>Explore Cottages</span>
                 <ArrowRight className="w-4 h-4 text-[#0B1910] stroke-[3] group-hover:translate-x-1.5 transition-transform" />
               </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
-                whileTap={{ scale: 0.96 }}
-                onClick={() => setIsVideoOpen(true)}
-                className="bg-white/10 border border-white/30 text-white font-bold rounded-full text-base backdrop-blur-md flex items-center gap-3 cursor-pointer group"
-                style={{ padding: '12px 24px 12px 12px' }}
-              >
-                <div className="w-7 h-7 rounded-full bg-white text-[#0B1910] flex items-center justify-center pl-0.5 group-hover:scale-110 transition-transform shrink-0 my-auto shadow-md">
-                  <Play className="w-3.5 h-3.5 fill-[#0B1910] text-[#0B1910]" />
-                </div>
-                <span>Watch Fullscreen</span>
-              </motion.button>
             </motion.div>
 
             {/* Highlights Grid & Rich Animated Rating Block */}
