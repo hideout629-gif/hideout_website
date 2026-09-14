@@ -304,11 +304,7 @@ export const Hero: React.FC<HeroProps> = () => {
                 />
 
                 {/* Top Controls Overlay */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#E5C158]/40 text-[#E5C158] text-[11px] font-extrabold uppercase tracking-widest shadow-lg">
-                    <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
-                    <span>RESORT REEL #{currentVideoIdx + 1}</span>
-                  </div>
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-end z-20">
                   <button
                     onClick={() => setIsMuted(!isMuted)}
                     className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-md"
