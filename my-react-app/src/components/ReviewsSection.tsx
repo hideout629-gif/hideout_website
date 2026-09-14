@@ -43,10 +43,10 @@ export const ReviewsSection: React.FC = () => {
         <img
           src={bgImg}
           alt="Nilgiri Mountain Background"
-          className="w-full h-full object-cover filter brightness-[0.9] contrast-[1.05]"
+          className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-[#EAF1EC]/85 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#EAF1EC]/90 via-[#EAF1EC]/70 to-[#EAF1EC]/90" />
+        <div className="absolute inset-0 bg-white/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
