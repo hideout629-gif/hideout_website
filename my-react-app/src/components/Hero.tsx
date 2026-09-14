@@ -91,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
   };
 
   return (
-    <section id="home" className="homepage-section relative min-h-screen w-full bg-[#07130C] text-white pt-24 md:pt-28 pb-6 md:pb-8 flex flex-col justify-between overflow-hidden selection:bg-[#E5C158] selection:text-[#0B1910]" style={{ paddingLeft: 'clamp(1.5rem, 4vw, 4rem)', paddingRight: 'clamp(1.5rem, 4vw, 4rem)' }}>
+    <section id="home" className="homepage-section relative min-h-screen w-full bg-[#07130C] text-white pt-28 md:pt-32 pb-6 md:pb-8 flex flex-col justify-between overflow-hidden selection:bg-[#E5C158] selection:text-[#0B1910]" style={{ paddingLeft: 'clamp(2rem, 5vw, 6rem)', paddingRight: 'clamp(2rem, 5vw, 6rem)' }}>
       {/* Dynamic Background Image with Smooth Fade */}
       {heroSlides.map((slide, idx) => (
         <div
@@ -102,18 +102,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           <img
             src={slide.imageUrl}
             alt={slide.title}
-            className="w-full h-full object-cover object-center filter brightness-[0.65]"
+            className="w-full h-full object-cover object-center filter brightness-[0.72]"
           />
         </div>
       ))}
 
       {/* Premium Multi-layered Dark Green & Ambient Vignette Overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#07130C]/95 via-[#07130C]/85 to-[#07130C]/60" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#07130C]/95 via-[#07130C]/85 to-transparent" />
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#07130C]/85 via-transparent to-[#07130C]/95" />
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-radial from-[#1E422D]/30 to-transparent pointer-events-none z-0" />
 
       {/* Top Right Handwritten Script Accent ("Nature Feels Better Here") */}
-      <div className="hidden lg:flex flex-col items-end gap-1 absolute top-28 right-12 lg:right-16 xl:right-20 z-20 pointer-events-none animate-float">
+      <div className="hidden xl:flex flex-col items-end gap-1 absolute top-28 right-12 lg:right-16 xl:right-20 z-20 pointer-events-none animate-float">
         <div className="flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-[#E5C158] animate-pulse" />
           <span className="font-script text-3xl xl:text-4xl text-[#E5C158] -rotate-3 drop-shadow-[0_2px_12px_rgba(229,193,88,0.6)]">
@@ -125,17 +125,17 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
         </svg>
       </div>
 
-      {/* Main Content Body Grid - Left Text & Right Video Player */}
-      <div className="relative z-10 w-full max-w-[1750px] mx-auto my-auto flex-1 flex flex-col justify-center py-4 sm:py-6" style={{ paddingLeft: 'clamp(1rem, 3vw, 4rem)', paddingRight: 'clamp(1rem, 3vw, 4rem)' }}>
+      {/* Main Content Body Container - Vertically Centered & Safe Padding */}
+      <div className="relative z-10 w-full max-w-[1750px] mx-auto my-auto flex-1 flex flex-col justify-center py-6 sm:py-8" style={{ paddingLeft: 'clamp(2rem, 5vw, 6rem)', paddingRight: 'clamp(2rem, 5vw, 6rem)' }}>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-center w-full">
 
-          {/* Left Column: Title, Subtitle, Buttons & Badges */}
+          {/* Left Column: Badge, Headline, Paragraph, Buttons, Highlights, Rating */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 xl:col-span-7 flex flex-col items-start text-left space-y-5 xl:space-y-6"
+            className="lg:col-span-7 xl:col-span-7 flex flex-col items-start text-left space-y-6 xl:space-y-8"
           >
 
             {/* Top Pill Badge */}
@@ -154,11 +154,11 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold font-serif text-white leading-[1.08] tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-serif text-white leading-[1.08] tracking-tight"
             >
               Escape to the <br />
               Paradise of{' '}
-              <span className="shimmer-text font-script italic text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-normal relative inline-block drop-shadow-[0_4px_25px_rgba(229,193,88,0.5)]">
+              <span className="shimmer-text font-script italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal relative inline-block drop-shadow-[0_4px_25px_rgba(229,193,88,0.5)]">
                 Hideout
               </span>
             </motion.h1>
@@ -168,7 +168,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-base sm:text-lg text-gray-200/90 leading-relaxed font-sans max-w-xl xl:max-w-2xl font-normal"
+              className="text-base sm:text-lg md:text-xl text-gray-200/90 leading-relaxed font-sans max-w-xl xl:max-w-2xl font-normal"
             >
               Experience the perfect blend of luxury and nature. Relax, Reconnect & Rejuvenate in our hand-built wooden mountain cottages.
             </motion.p>
@@ -178,7 +178,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex flex-wrap items-center gap-4 pt-1"
+              className="flex flex-wrap items-center gap-4 sm:gap-5"
             >
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(229, 193, 88, 0.45)" }}
@@ -205,63 +205,113 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
               </motion.button>
             </motion.div>
 
-            {/* Highlights Grid & Rating Badge */}
-            <div className="pt-3 w-full flex flex-col gap-4">
-              <div
-                className="grid grid-cols-2 sm:grid-cols-4 gap-3 rounded-2xl sm:rounded-full bg-black/40 backdrop-blur-md border border-white/15 w-full shadow-2xl items-center"
-                style={{ padding: '16px 20px' }}
-              >
-                <div className="flex items-center gap-3 px-2 border-r border-white/20">
-                  <div className="w-8 h-8 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
-                    <Mountain className="w-4 h-4" />
-                  </div>
-                  <span className="text-xs font-semibold text-white/95 leading-tight">
-                    Valley<br />Views
-                  </span>
+            {/* Highlights Grid & Rich Animated Rating Block */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="w-full pt-4 flex flex-col justify-between gap-6 xl:gap-8"
+            >
+              <div className="flex flex-col gap-5 xl:gap-6 max-w-4xl">
+
+                {/* Highlights Grid with Dividers */}
+                <div
+                  className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 rounded-2xl sm:rounded-full bg-black/40 backdrop-blur-md border border-white/15 w-full shadow-2xl items-center"
+                  style={{ padding: '20px', minHeight: '84px' }}
+                >
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 border-r border-white/20 transition-transform h-full">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                      <Mountain className="w-5 h-5" />
+                    </div>
+                    <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
+                      Breathtaking<br />Valley Views
+                    </span>
+                  </motion.div>
+
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 sm:border-r border-white/20 transition-transform h-full">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                      <Leaf className="w-5 h-5" />
+                    </div>
+                    <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
+                      Luxury Wooden<br />Cottages
+                    </span>
+                  </motion.div>
+
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 border-r border-white/20 transition-transform h-full">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                      <Coffee className="w-5 h-5" />
+                    </div>
+                    <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
+                      Authentic Tea<br />Experience
+                    </span>
+                  </motion.div>
+
+                  <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 transition-transform h-full">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
+                      <Heart className="w-5 h-5" />
+                    </div>
+                    <span className="text-xs sm:text-sm md:text-base font-semibold text-white/95 leading-tight">
+                      320+<br />Happy Guests
+                    </span>
+                  </motion.div>
                 </div>
 
-                <div className="flex items-center gap-3 px-2 sm:border-r border-white/20">
-                  <div className="w-8 h-8 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
-                    <Leaf className="w-4 h-4" />
-                  </div>
-                  <span className="text-xs font-semibold text-white/95 leading-tight">
-                    Wooden<br />Cottages
-                  </span>
-                </div>
+                {/* Rich Animated Rating Badge */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  className="w-fit inline-flex items-center gap-5 sm:gap-6 rounded-full bg-gradient-to-r from-black/70 via-black/50 to-black/70 backdrop-blur-xl border border-[#E5C158]/40 shadow-[0_10px_35px_rgba(0,0,0,0.7),0_0_25px_rgba(229,193,88,0.2)] group cursor-pointer"
+                  style={{ padding: '20px', minHeight: '92px' }}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="relative flex items-center justify-center w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#E5C158]/15 border-2 border-[#E5C158]/60 text-[#E5C158] font-bold text-xl shadow-inner group-hover:scale-110 group-hover:border-[#E5C158] group-hover:shadow-[0_0_20px_rgba(229,193,88,0.6)] transition-all duration-300">
+                      <span className="font-serif">4.9</span>
+                      <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E5C158] opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#E5C158]"></span>
+                      </span>
+                    </div>
 
-                <div className="flex items-center gap-3 px-2 border-r border-white/20">
-                  <div className="w-8 h-8 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
-                    <Coffee className="w-4 h-4" />
-                  </div>
-                  <span className="text-xs font-semibold text-white/95 leading-tight">
-                    Tea Walk<br />Tours
-                  </span>
-                </div>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-1.5">
+                        {[...Array(5)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            animate={{ rotate: [0, 360] }}
+                            transition={{
+                              duration: 1.4,
+                              repeat: Infinity,
+                              repeatDelay: 3.2,
+                              delay: i * 0.6,
+                              ease: "easeInOut"
+                            }}
+                            whileHover={{ scale: 1.3 }}
+                          >
+                            <Star className="w-5.5 h-5.5 sm:w-6 sm:h-6 fill-[#E5C158] text-[#E5C158] drop-shadow-[0_0_8px_rgba(229,193,88,0.85)]" />
+                          </motion.div>
+                        ))}
+                        <span className="ml-2 text-xs font-extrabold text-[#E5C158] uppercase tracking-widest">Top Rated</span>
+                      </div>
 
-                <div className="flex items-center gap-3 px-2">
-                  <div className="w-8 h-8 rounded-full border border-[#E5C158] text-[#E5C158] flex items-center justify-center shrink-0">
-                    <Heart className="w-4 h-4" />
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-200 font-medium">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>320+ Verified Guest Reviews</span>
+                      </div>
+                    </div>
                   </div>
-                  <span className="text-xs font-semibold text-white/95 leading-tight">
-                    320+<br />Guests
-                  </span>
-                </div>
+
+                  <div className="hidden sm:flex items-center justify-center pl-5 border-l border-white/20">
+                    <div className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-200 tracking-wider flex items-center gap-2 group-hover:bg-[#E5C158]/20 group-hover:text-[#E5C158] transition-colors">
+                      <Sparkles className="w-4 h-4 text-[#E5C158] animate-spin" style={{ animationDuration: '8s' }} />
+                      <span>5-Star Hospitality</span>
+                    </div>
+                  </div>
+                </motion.div>
+
               </div>
-
-              {/* Rating Pill */}
-              <div className="w-fit inline-flex items-center gap-4 rounded-full bg-black/60 backdrop-blur-xl border border-[#E5C158]/40 shadow-xl px-5 py-2.5">
-                <div className="flex items-center gap-2">
-                  <span className="font-serif text-lg font-bold text-[#E5C158]">4.9</span>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#E5C158] text-[#E5C158]" />
-                    ))}
-                  </div>
-                </div>
-                <div className="h-4 w-px bg-white/20" />
-                <span className="text-xs font-medium text-gray-200">320+ Verified Guest Reviews</span>
-              </div>
-            </div>
+            </motion.div>
 
           </motion.div>
 
@@ -270,7 +320,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
             initial={{ opacity: 0, scale: 0.92, x: 40 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 xl:col-span-5 w-full flex flex-col items-center lg:items-end justify-center"
+            className="lg:col-span-5 xl:col-span-5 w-full flex flex-col items-center lg:items-end justify-center mt-6 lg:mt-0"
           >
             <div className="relative w-full max-w-md xl:max-w-lg aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5] rounded-[28px] overflow-hidden border-2 border-[#E5C158]/50 shadow-[0_20px_60px_rgba(0,0,0,0.85),0_0_35px_rgba(229,193,88,0.25)] group bg-[#07130C]">
 
@@ -365,7 +415,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
       </div>
 
       {/* Bottom Bar Footer Strip */}
-      <div className="relative z-20 w-full max-w-[1750px] mx-auto pt-3 md:pt-4 flex items-center justify-between border-t border-white/10 text-xs tracking-wider text-gray-300 font-semibold uppercase" style={{ paddingLeft: 'clamp(1rem, 3vw, 4rem)', paddingRight: 'clamp(1rem, 3vw, 4rem)' }}>
+      <div className="relative z-20 w-full max-w-[1750px] mx-auto pt-3 md:pt-4 flex items-center justify-between border-t border-white/10 text-xs tracking-wider text-gray-300 font-semibold uppercase" style={{ paddingLeft: 'clamp(2rem, 5vw, 6rem)', paddingRight: 'clamp(2rem, 5vw, 6rem)' }}>
         <div className="flex items-center gap-3">
           <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border-2 border-[#E5C158]/70 flex items-start justify-center p-1">
             <div className="w-1 h-2 bg-[#E5C158] rounded-full animate-bounce" />
