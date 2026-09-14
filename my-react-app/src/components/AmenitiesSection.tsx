@@ -100,36 +100,36 @@ export const AmenitiesSection: React.FC = () => {
         >
 
           {/* Left Side Feature Tag List */}
-          <div className="lg:col-span-3 hidden lg:flex flex-col space-y-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#5B826D] border-l-2 border-gray-300/60 pl-4">
-            <div className="flex items-center gap-2 text-[#133A2B]">
-              <span className="w-4 h-4 rounded-full bg-[#133A2B] text-white flex items-center justify-center text-[9px]">🍃</span>
+          <div className="lg:col-span-3 hidden lg:flex flex-col space-y-1.5 text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#061C13] border-l-2 border-[#0E2C20]/40 pl-4">
+            <div className="flex items-center gap-2 text-[#061C13] font-extrabold">
+              <span className="w-4 h-4 rounded-full bg-[#0E2C20] text-white flex items-center justify-center text-[9px]">🍃</span>
               <span>THOUGHTFUL AMENITIES</span>
             </div>
-            <div className="text-gray-400 font-normal">FOR A BETTER TOMORROW</div>
+            <div className="text-[#081F15] font-bold">FOR A BETTER TOMORROW</div>
           </div>
 
           {/* Center Main Headline & Tagline */}
           <div className="lg:col-span-6 text-center space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE7DF] border border-[#C5D7CC] text-[10px] font-extrabold tracking-widest text-[#133A2B] uppercase">
-              <span className="w-4 h-4 rounded-full bg-[#133A2B] text-white flex items-center justify-center text-[9px] shrink-0">👑</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0E2C20] text-white border border-[#0E2C20] shadow-md text-[10px] font-extrabold tracking-widest uppercase">
+              <span className="w-4 h-4 rounded-full bg-white/20 text-white flex items-center justify-center text-[9px] shrink-0">👑</span>
               <span>PREMIUM HOSPITALITY</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#0E281C] leading-[1.15]">
-              Resort Facilities & <span className="font-serif italic font-normal text-[#1B4C37]">Amenities</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#061C13] leading-[1.15]">
+              Resort Facilities & <span className="font-serif italic font-normal text-[#061C13]">Amenities</span>
             </h2>
 
-            <p className="text-sm md:text-base text-gray-600 max-w-xl mx-auto leading-relaxed font-sans">
+            <p className="text-sm md:text-base text-[#081F15] font-semibold max-w-xl mx-auto leading-relaxed font-sans drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
               Everything you need for a comfortable, luxurious, and hassle-free mountain vacation.
             </p>
           </div>
 
           {/* Right Side Handwritten Script Accent */}
           <div className="lg:col-span-3 flex flex-col items-start lg:items-end justify-end">
-            <div className="font-script text-3xl sm:text-4xl text-[#184533] leading-none transform -rotate-3 select-none text-right">
+            <div className="font-script text-3xl sm:text-4xl text-[#061C13] font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
               "More Than<br />A Stay"
             </div>
-            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#184533]/40 stroke-current stroke-2 mt-1">
+            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#061C13] stroke-current stroke-2 mt-1">
               <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round" />
             </svg>
           </div>

@@ -64,30 +64,30 @@ export const ReviewsSection: React.FC = () => {
           {/* Left Main Title & Subtitle */}
           <div className="lg:col-span-8 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE7DF] border border-[#C5D7CC] text-[10px] font-extrabold tracking-widest text-[#133A2B] uppercase">
-                <span className="w-4 h-4 rounded-full bg-[#133A2B] text-white flex items-center justify-center shrink-0 text-[9px]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0E2C20] text-white border border-[#0E2C20] shadow-md text-[10px] font-extrabold tracking-widest uppercase">
+                <span className="w-4 h-4 rounded-full bg-white/20 text-white flex items-center justify-center shrink-0 text-[9px]">
                   ★
                 </span>
                 <span>GUEST TESTIMONIALS</span>
               </div>
-              <div className="h-px w-20 bg-[#B5CBD0]/50 hidden sm:block" />
+              <div className="h-px w-20 bg-[#0E2C20]/30 hidden sm:block" />
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#0E281C] leading-[1.15]">
-              Loved By <span className="font-serif italic font-normal text-[#1B4C37]">Mountain</span> Travelers
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#061C13] leading-[1.15]">
+              Loved By <span className="font-serif italic font-normal text-[#061C13]">Mountain</span> Travelers
             </h2>
 
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl leading-relaxed font-sans">
+            <p className="text-sm md:text-base text-[#081F15] font-semibold max-w-2xl leading-relaxed font-sans drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
               Over 320+ couples and families have created everlasting memories at Hideout. Here is what they have to say about their stay.
             </p>
           </div>
 
           {/* Right Side Handwritten Script Accent */}
           <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-end">
-            <div className="font-script text-3xl sm:text-4xl text-[#184533] leading-none transform -rotate-3 select-none text-right">
+            <div className="font-script text-3xl sm:text-4xl text-[#061C13] font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
               "Real People<br />Real Stories<br />Beautiful Stays"
             </div>
-            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#184533]/40 stroke-current stroke-2 mt-1">
+            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#061C13] stroke-current stroke-2 mt-1">
               <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round" />
             </svg>
           </div>

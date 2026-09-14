@@ -87,30 +87,30 @@ export const GallerySection: React.FC = () => {
           {/* Left Main Title & Subtitle */}
           <div className="lg:col-span-8 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE7DF] border border-[#C5D7CC] text-[10px] font-extrabold tracking-widest text-[#133A2B] uppercase">
-                <span className="w-4 h-4 rounded-full bg-[#133A2B] text-white flex items-center justify-center shrink-0">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0E2C20] text-white border border-[#0E2C20] shadow-md text-[10px] font-extrabold tracking-widest uppercase">
+                <span className="w-4 h-4 rounded-full bg-white/20 text-white flex items-center justify-center shrink-0">
                   <Camera className="w-2.5 h-2.5" />
                 </span>
                 <span>VISUAL TOUR</span>
               </div>
-              <div className="h-px w-20 bg-[#B5CBD0]/50 hidden sm:block" />
+              <div className="h-px w-20 bg-[#0E2C20]/30 hidden sm:block" />
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#0E281C] leading-[1.15]">
-              Resort <span className="font-serif italic font-normal text-[#1B4C37]">Photo Gallery</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-[#061C13] leading-[1.15]">
+              Resort <span className="font-serif italic font-normal text-[#061C13]">Photo Gallery</span>
             </h2>
 
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl leading-relaxed font-sans">
+            <p className="text-sm md:text-base text-[#081F15] font-semibold max-w-2xl leading-relaxed font-sans drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
               Take a peak into life at Hideout — from misty mornings on private balconies to cozy evenings by the fireplace.
             </p>
           </div>
 
           {/* Right Side Handwritten Script Accent */}
           <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-end">
-            <div className="font-script text-3xl sm:text-4xl text-[#184533] leading-none transform -rotate-3 select-none text-right">
+            <div className="font-script text-3xl sm:text-4xl text-[#061C13] font-bold leading-none transform -rotate-3 select-none text-right drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
               "Moments Make<br />Memories"
             </div>
-            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#184533]/40 stroke-current stroke-2 mt-1">
+            <svg viewBox="0 0 140 10" fill="none" className="w-28 h-2.5 text-[#061C13] stroke-current stroke-2 mt-1">
               <path d="M2 6 Q 70 1, 138 6" strokeLinecap="round" />
             </svg>
           </div>
@@ -138,12 +138,12 @@ export const GallerySection: React.FC = () => {
                   }
                 }}
                 style={{ padding: '12px 26px' }}
-                className={`flex items-center gap-3 rounded-full text-sm sm:text-base font-semibold transition-all cursor-pointer border ${isActive
+                className={`flex items-center gap-3 rounded-full text-sm sm:text-base font-bold transition-all cursor-pointer border ${isActive
                   ? 'bg-[#0E2C20] text-white border-[#0E2C20] shadow-md'
-                  : 'bg-white/95 text-gray-800 hover:bg-white border-gray-200 shadow-sm'
+                  : 'bg-white/95 text-[#061C13] hover:bg-white border-gray-300/90 shadow-sm hover:text-[#0E2C20]'
                   }`}
               >
-                <span className={`shrink-0 ${isActive ? 'text-white' : 'text-[#1E4A37]'}`}>
+                <span className={`shrink-0 ${isActive ? 'text-white' : 'text-[#061C13]'}`}>
                   {cat.icon}
                 </span>
                 <span className="whitespace-nowrap">{cat.label}</span>
