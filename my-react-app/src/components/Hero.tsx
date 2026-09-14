@@ -382,15 +382,7 @@ export const Hero: React.FC<HeroProps> = () => {
       </div>
 
       {/* Bottom Bar Footer Strip */}
-      <div className="relative z-20 w-full max-w-[1750px] mx-auto pt-3 md:pt-4 flex items-center justify-between border-t border-white/10 text-xs tracking-wider text-gray-300 font-semibold uppercase" style={{ paddingLeft: 'clamp(2rem, 5vw, 6rem)', paddingRight: 'clamp(2rem, 5vw, 6rem)' }}>
-        <div className="flex items-center gap-3">
-          <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border-2 border-[#E5C158]/70 flex items-start justify-center p-1">
-            <div className="w-1 h-2 bg-[#E5C158] rounded-full animate-bounce" />
-          </div>
-          <span className="text-gray-300 tracking-widest text-[11px] sm:text-xs">Scroll to explore</span>
-          <div className="hidden sm:block w-16 md:w-20 h-px bg-gradient-to-r from-white/30 to-transparent" />
-        </div>
-
+      <div className="relative z-20 w-full max-w-[1750px] mx-auto pt-3 md:pt-4 flex items-center justify-end border-t border-white/10 text-xs tracking-wider text-gray-300 font-semibold uppercase" style={{ paddingLeft: 'clamp(2rem, 5vw, 6rem)', paddingRight: 'clamp(2rem, 5vw, 6rem)' }}>
         <div className="flex items-center gap-3">
           <div className="hidden sm:block w-16 md:w-20 h-px bg-gradient-to-l from-white/30 to-transparent" />
           <span className="text-[#E5C158] tracking-widest text-[11px] sm:text-xs flex items-center gap-1.5">
