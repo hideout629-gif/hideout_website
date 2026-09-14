@@ -15,9 +15,10 @@ import {
 } from 'lucide-react';
 import { experiencesData } from '../data/experiencesData';
 import type { Experience } from '../types';
+import { useHorizontalScroll } from '../utils/useHorizontalScroll';
 
 export const ExperiencesSection: React.FC = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { containerRef: scrollContainerRef, isMouseDown, hasDragged, dragProps } = useHorizontalScroll<HTMLDivElement>();
   const [activeDotIndex, setActiveDotIndex] = useState<number>(0);
   const [likedMap, setLikedMap] = useState<Record<string, boolean>>({});
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
@@ -103,24 +104,6 @@ export const ExperiencesSection: React.FC = () => {
         <div className="absolute inset-x-0 top-0 h-80 opacity-10 bg-[radial-gradient(#1A4231_1.5px,transparent_1.5px)] [background-size:24px_24px]" />
       </div>
 
-      <div className="hidden md:block absolute -left-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-left">
-        <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-40 -20 C30 100 110 250 20 450 C-20 520 -50 580 -80 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
-          <path d="M10 80 C60 50 120 70 140 120 C90 130 40 110 10 80 Z" fill="#24543F" opacity="0.85" className="animate-leaf-flutter-top" />
-          <path d="M45 180 C110 150 175 180 185 240 C125 250 70 220 45 180 Z" fill="#1C4533" opacity="0.9" className="animate-leaf-flutter-mid" />
-          <path d="M30 310 C100 280 160 320 165 380 C105 385 55 350 30 310 Z" fill="#2A5C46" opacity="0.8" className="animate-leaf-flutter-low" />
-        </svg>
-      </div>
-
-      <div className="hidden md:block absolute -right-4 top-0 bottom-0 z-0 pointer-events-none w-48 sm:w-64 opacity-90 select-none animate-wind-sway-right">
-        <svg viewBox="0 0 200 600" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <path d="M240 -20 C170 120 90 280 180 480 C220 540 240 580 260 620" stroke="#1B4231" strokeWidth="3" opacity="0.7" />
-          <path d="M190 100 C140 70 80 90 60 140 C110 150 160 130 190 100 Z" fill="#24543F" opacity="0.85" className="animate-leaf-flutter-top" />
-          <path d="M155 210 C90 180 25 210 15 270 C75 280 130 250 155 210 Z" fill="#1C4533" opacity="0.9" className="animate-leaf-flutter-mid" />
-          <path d="M170 340 C100 310 40 350 35 410 C95 415 145 380 170 340 Z" fill="#2A5C46" opacity="0.8" className="animate-leaf-flutter-low" />
-        </svg>
-      </div>
-
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto -translate-y-6 md:-translate-y-12 lg:-translate-y-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -189,8 +172,15 @@ export const ExperiencesSection: React.FC = () => {
             transition={{ duration: 0.3 }}
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex items-stretch gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory py-4 px-1 w-full"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            {...dragProps}
+            className={`flex items-stretch gap-6 overflow-x-auto scrollbar-none py-4 px-1 w-full select-none ${
+              isMouseDown ? 'cursor-grabbing snap-none' : 'cursor-grab snap-x snap-mandatory'
+            }`}
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              scrollSnapType: isMouseDown ? 'none' : 'x mandatory',
+            }}
           >
             {filteredExperiences.map((item, idx) => {
               const isLiked = !!likedMap[item.id];
@@ -202,8 +192,11 @@ export const ExperiencesSection: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
                   whileHover={{ y: -8 }}
-                  onClick={() => setSelectedExperience(item)}
-                  className="snap-start shrink-0 w-[280px] sm:w-[310px] lg:w-[330px] bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                  onClick={() => {
+                    if (hasDragged) return;
+                    setSelectedExperience(item);
+                  }}
+                  className="snap-start shrink-0 w-[280px] sm:w-[310px] lg:w-[330px] bg-white rounded-[22px] overflow-hidden border border-gray-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group cursor-pointer select-none"
                 >
                   <div className="relative h-60 overflow-hidden shrink-0">
                     <img

@@ -1,5 +1,19 @@
 import type { Cottage } from '../types';
 
+import img26 from '../assets/image/image 26.jpeg';
+import img27 from '../assets/image/image 27.jpeg';
+import img75 from '../assets/image/image 75.jpeg';
+import img61 from '../assets/image/image 61.jpeg';
+import img64 from '../assets/image/image 64.jpeg';
+import img45 from '../assets/image/image 45.jpeg';
+import img60 from '../assets/image/image 60.jpeg';
+import img47 from '../assets/image/image 47.jpeg';
+import img48 from '../assets/image/image 48.jpeg';
+import img50 from '../assets/image/image 50.jpeg';
+import img52 from '../assets/image/image 52.jpeg';
+import img62 from '../assets/image/image 62.jpeg';
+import img66 from '../assets/image/image 66.jpeg';
+
 export const cottagesData: Cottage[] = [
   {
     id: 'luxury-cottage',
@@ -16,13 +30,8 @@ export const cottagesData: Cottage[] = [
     rating: 4.9,
     reviewsCount: 128,
     location: 'Hideout, Tamil Nadu',
-    featuredImage: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'
-    ],
+    featuredImage: img26,
+    images: [img26, img27, img47, img52],
     description: 'A perfect sanctuary nestled in the misty Nilgiri hills. Enjoy your morning Nilgiri chai on the private balcony overlooking mist-covered tea gardens.',
     amenities: [
       'Private Balcony',
@@ -55,12 +64,8 @@ export const cottagesData: Cottage[] = [
     rating: 4.95,
     reviewsCount: 94,
     location: 'Coonoor, Nilgiri',
-    featuredImage: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'
-    ],
+    featuredImage: img27,
+    images: [img27, img61, img60, img62],
     description: 'Premium cottage featuring large floor-to-ceiling glass windows that bring the lush green tea plantation straight into your living room.',
     amenities: [
       'Panoramic Glass Windows',
@@ -92,12 +97,8 @@ export const cottagesData: Cottage[] = [
     rating: 4.88,
     reviewsCount: 82,
     location: 'Kotagiri, Nilgiri',
-    featuredImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80'
-    ],
+    featuredImage: img61,
+    images: [img61, img48, img52, img64],
     description: 'Designed for memorable family gatherings. Features two spacious bedrooms, a cozy common fireplace living room, and a dedicated campfire lawn.',
     amenities: [
       '2 Master Bedrooms',
@@ -129,13 +130,9 @@ export const cottagesData: Cottage[] = [
     rating: 4.98,
     reviewsCount: 116,
     location: 'Hideout, Tamil Nadu',
-    featuredImage: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'
-    ],
-    description: 'An intimate, quiet suite framed by towering pine trees. Features a outdoor warm Jacuzzi tub and candlelight setup on the wooden deck.',
+    featuredImage: img75,
+    images: [img75, img50, img66, img45],
+    description: 'An intimate, quiet suite framed by towering pine trees. Features an outdoor warm Jacuzzi tub and candlelight setup on the wooden deck.',
     amenities: [
       'Heated Outdoor Jacuzzi',
       'Candlelight Dinner Setup',

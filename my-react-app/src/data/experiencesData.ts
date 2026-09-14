@@ -1,5 +1,13 @@
 import type { Experience } from '../types';
 
+import img82 from '../assets/image/image 82.jpeg';
+import img55 from '../assets/image/image 55.jpeg';
+import img49 from '../assets/image/image 49.jpeg';
+import img21 from '../assets/image/image 21.jpeg';
+import img45 from '../assets/image/image 45.jpeg';
+import img63 from '../assets/image/image 63.jpeg';
+import img73 from '../assets/image/image 73.jpeg';
+
 export const experiencesData: Experience[] = [
   {
     id: 'scenic-views',
@@ -7,7 +15,7 @@ export const experiencesData: Experience[] = [
     subtitle: 'Breathtaking vistas',
     icon: 'Mountain',
     description: 'Breathtaking views of mist-covered hills, rolling tea valleys & serene lake horizons right from your private terrace.',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
+    image: img82
   },
   {
     id: 'camp-fire',
@@ -15,7 +23,7 @@ export const experiencesData: Experience[] = [
     subtitle: 'Warm cozy nights',
     icon: 'Flame',
     description: 'Enjoy cozy campfire evenings under a starry sky with warm marshmallows, acoustic music, and your loved ones.',
-    image: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=800&q=80'
+    image: img63
   },
   {
     id: 'nature-walks',
@@ -23,7 +31,7 @@ export const experiencesData: Experience[] = [
     subtitle: 'Explore forest trails',
     icon: 'Trees',
     description: 'Guided morning treks through eucalyptus groves, tea gardens, and hidden mountain waterfalls in fresh crisp air.',
-    image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80'
+    image: img49
   },
   {
     id: 'local-cuisine',
@@ -31,6 +39,22 @@ export const experiencesData: Experience[] = [
     subtitle: 'Authentic Nilgiri flavors',
     icon: 'Utensils',
     description: 'Savor freshly cooked authentic South Indian breakfast, traditional Badaga curry, homemade chocolates & hot Nilgiri tea.',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80'
+    image: img21
+  },
+  {
+    id: 'tea-tasting',
+    title: 'Tea Estate Walk',
+    subtitle: 'Artisan Nilgiri chai',
+    icon: 'Sparkles',
+    description: 'Walk through organic tea gardens and learn traditional tea leaf plucking & brewing techniques with local tea masters.',
+    image: img55
+  },
+  {
+    id: 'dining-lounge',
+    title: 'Private Veranda Dining',
+    subtitle: 'Al fresco feast',
+    icon: 'Utensils',
+    description: 'Enjoy handcrafted multi-course dining served privately on your cottage veranda facing sunset mountain views.',
+    image: img73
   }
 ];

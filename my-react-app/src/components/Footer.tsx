@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ChevronRight, Clock, ArrowRight, ArrowUp } from 'lucide-react';
+import mapImg from '../assets/image/image 26.jpeg';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -189,7 +190,7 @@ export const Footer: React.FC = () => {
               className="block rounded-2xl overflow-hidden border border-[#E5B849]/40 shadow-2xl relative w-full h-full min-h-[300px] group cursor-pointer hover:border-[#E5B849]/80 transition-all duration-300"
             >
               <img
-                src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800"
+                src={mapImg}
                 alt="Hideout Map Location"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 absolute inset-0"
               />
@@ -221,43 +222,8 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Newsletter Subscription Bar */}
-        <div className="mx-auto w-full" style={{ marginTop: '40px' }}>
-          <div className="rounded-2xl border border-[#E5B849]/40 bg-gradient-to-r from-[#0C2517] via-[#0E2A1B] to-[#0C2517] px-6 sm:px-10 py-6 sm:py-7 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-            {/* Left: Icon + Text */}
-            <div className="flex items-center gap-4 shrink-0">
-              <div className="w-12 h-12 rounded-xl bg-[#E5B849]/15 border border-[#E5B849]/30 flex items-center justify-center shrink-0">
-                <Mail className="w-5 h-5 text-[#E5B849]" />
-              </div>
-              <div>
-                <div className="text-white font-bold text-[17px] font-serif leading-tight">Stay in the Loop</div>
-                <div className="text-gray-400 text-[13px] font-normal leading-snug mt-0.5">Subscribe to get updates on special offers, new experiences and more.</div>
-              </div>
-            </div>
-            {/* Right: Email Input + Subscribe Button */}
-            <div className="flex items-center gap-3 w-full sm:w-auto sm:min-w-[380px]">
-              <div className="flex-1 relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="w-full bg-[#07170E] border border-white/15 rounded-full text-[13px] text-gray-200 placeholder:text-gray-500 focus:outline-none focus:border-[#E5B849]/60 focus:ring-1 focus:ring-[#E5B849]/30 transition-all"
-                  style={{ padding: '13px 16px 13px 42px' }}
-                />
-              </div>
-              <button
-                className="shrink-0 bg-[#E5B849] hover:bg-[#F3D270] text-[#07170E] font-bold text-[13px] rounded-full flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.03] cursor-pointer"
-                style={{ padding: '13px 24px' }}
-              >
-                <span>Subscribe</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-5 text-[13px] text-gray-400 font-medium w-full" style={{ marginTop: '24px', paddingTop: '24px', paddingBottom: '18px' }}>
+        <div className="border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-5 text-[13px] text-gray-400 font-medium w-full" style={{ marginTop: '40px', paddingTop: '24px', paddingBottom: '18px' }}>
 
           {/* Left Copyright */}
           <div className="text-gray-500">
