@@ -16,6 +16,7 @@ import {
 import { experiencesData } from '../data/experiencesData';
 import type { Experience } from '../types';
 import { useHorizontalScroll } from '../utils/useHorizontalScroll';
+import bgImg from '../assets/image/background.png';
 
 export const ExperiencesSection: React.FC = () => {
   const { containerRef: scrollContainerRef, isMouseDown, hasDragged, dragProps } = useHorizontalScroll<HTMLDivElement>();
@@ -99,9 +100,15 @@ export const ExperiencesSection: React.FC = () => {
   return (
     <section id="experiences" className="homepage-section relative pb-10 md:pb-16 lg:pb-8 pt-4 md:pt-6 lg:pt-2 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
 
+      {/* Background Mountain Photo & Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#DFEADF]/60 via-[#EAF1EC] to-[#E5EEE7]" />
-        <div className="absolute inset-x-0 top-0 h-80 opacity-10 bg-[radial-gradient(#1A4231_1.5px,transparent_1.5px)] [background-size:24px_24px]" />
+        <img
+          src={bgImg}
+          alt="Nilgiri Mountain Background"
+          className="w-full h-full object-cover filter brightness-[0.9] contrast-[1.05]"
+        />
+        <div className="absolute inset-0 bg-[#EAF1EC]/85 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#EAF1EC]/90 via-[#EAF1EC]/70 to-[#EAF1EC]/90" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto -translate-y-6 md:-translate-y-12 lg:-translate-y-24">

@@ -4,6 +4,7 @@ import { Camera, LayoutGrid, Home, Bed, Mountain, Utensils, Heart, ArrowRight, T
 import { galleryData } from '../data/galleryData';
 import type { GalleryItem } from '../types';
 import { LightboxModal } from './LightboxModal';
+import bgImg from '../assets/image/background.png';
 
 export const GallerySection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -60,10 +61,15 @@ export const GallerySection: React.FC = () => {
   return (
     <section id="gallery" className="homepage-section relative py-10 md:py-16 lg:py-8 pt-16 md:pt-20 lg:pt-16 scroll-mt-16 md:scroll-mt-24 bg-[#EAF1EC] text-[#12281D] flex flex-col justify-center items-center overflow-hidden">
 
-      {/* Background Soft Misty Mountain Gradient & Silhouette */}
+      {/* Background Mountain Photo & Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#DFEADF]/60 via-[#EAF1EC] to-[#E5EEE7]" />
-        <div className="absolute inset-x-0 top-0 h-80 opacity-10 bg-[radial-gradient(#1A4231_1.5px,transparent_1.5px)] [background-size:24px_24px]" />
+        <img
+          src={bgImg}
+          alt="Nilgiri Mountain Background"
+          className="w-full h-full object-cover filter brightness-[0.9] contrast-[1.05]"
+        />
+        <div className="absolute inset-0 bg-[#EAF1EC]/85 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#EAF1EC]/90 via-[#EAF1EC]/70 to-[#EAF1EC]/90" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto">
