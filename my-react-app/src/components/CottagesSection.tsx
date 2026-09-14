@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Play,
   LayoutGrid,
   Sparkles,
   Home,
@@ -94,19 +93,6 @@ export const CottagesSection: React.FC<CottagesSectionProps> = ({ onSelectDetail
                 <path d="M2 5 Q 80 1, 158 5" strokeLinecap="round" />
               </svg>
             </div>
-
-            {/* Watch Story Pill Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{ padding: '12px 24px 12px 12px' }}
-              className="flex items-center gap-3 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 shadow-sm hover:shadow-md text-xs sm:text-sm font-bold text-[#0E281C] hover:bg-white transition-all cursor-pointer"
-            >
-              <div className="w-7 h-7 rounded-full bg-[#242726] text-white flex items-center justify-center shadow-inner">
-                <Play className="w-3 h-3 fill-white ml-0.5" />
-              </div>
-              <span>Watch Our Story</span>
-            </motion.button>
 
           </div>
 
