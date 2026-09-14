@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ChevronRight, Clock, ArrowRight, ArrowUp } from 'lucide-react';
 import mapImg from '../assets/image/image 26.jpeg';
+import bgImg2 from '../assets/image/background2.png';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -8,31 +9,21 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#07170E] text-gray-300 relative w-full overflow-hidden" style={{ scrollSnapAlign: 'start' }}>
+    <footer className="relative w-full overflow-hidden text-gray-200" style={{ scrollSnapAlign: 'start' }}>
 
-      {/* Full-Width Mountain Forest Silhouette Top Banner */}
-      <div className="w-full relative h-24 sm:h-32 md:h-40 overflow-hidden pointer-events-none select-none">
-        {/* Sky-to-dark gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D2218] via-[#091A11] to-[#07170E]" />
-        {/* Forest treeline silhouette - layered for depth */}
-        <svg
-          viewBox="0 0 1440 200"
-          preserveAspectRatio="none"
-          className="absolute bottom-0 inset-x-0 w-full h-full"
-        >
-          {/* Far background trees - lighter */}
-          <polygon points="0,200 20,120 40,200 60,100 80,200 100,90 120,200 140,110 160,200 180,80 200,200 220,95 240,200 260,105 280,200 300,85 320,200 340,115 360,200 380,75 400,200 420,100 440,200 460,110 480,200 500,70 520,200 540,90 560,200 580,105 600,200 620,80 640,200 660,95 680,200 700,85 720,200 740,100 760,200 780,75 800,200 820,110 840,200 860,90 880,200 900,105 920,200 940,70 960,200 980,95 1000,200 1020,85 1040,200 1060,100 1080,200 1100,80 1120,200 1140,110 1160,200 1180,90 1200,200 1220,75 1240,200 1260,105 1280,200 1300,85 1320,200 1340,95 1360,200 1380,100 1400,200 1420,80 1440,200" fill="#0B1F14" opacity="0.6" />
-          {/* Mid trees - medium */}
-          <polygon points="0,200 30,130 60,200 90,110 120,200 150,95 180,200 210,120 240,200 270,85 300,200 330,105 360,200 390,90 420,200 450,75 480,200 510,110 540,200 570,100 600,200 630,80 660,200 690,115 720,200 750,90 780,200 810,105 840,200 870,70 900,200 930,95 960,200 990,85 1020,200 1050,100 1080,200 1110,80 1140,200 1170,110 1200,200 1230,90 1260,200 1290,75 1320,200 1350,105 1380,200 1410,85 1440,200" fill="#0A1C12" opacity="0.8" />
-          {/* Front trees - darkest */}
-          <polygon points="0,200 40,140 80,200 120,120 160,200 200,130 240,200 280,110 320,200 360,125 400,200 440,135 480,200 520,115 560,200 600,130 640,200 680,120 720,200 760,140 800,200 840,125 880,200 920,135 960,200 1000,115 1040,200 1080,130 1120,200 1160,120 1200,200 1240,140 1280,200 1320,125 1360,200 1400,135 1440,200" fill="#07170E" />
-        </svg>
-        {/* Ambient fog layer */}
-        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#07170E] to-transparent" />
+      {/* Background Mountain Photo & Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src={bgImg2}
+          alt="Nilgiri Mountain Background"
+          className="w-full h-full object-cover filter brightness-[0.85] contrast-[1.05]"
+        />
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90" />
       </div>
 
       {/* Main Footer Content Container */}
-      <div className="w-full relative z-20 mx-auto pb-0" style={{ maxWidth: '1600px', padding: '70px 64px 0' }}>
+      <div className="w-full relative z-20 mx-auto pb-0" style={{ maxWidth: '1600px', padding: '60px 64px 0' }}>
 
         {/* 4-Column + Map Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 w-full items-start" style={{ gridTemplateColumns: 'minmax(0, 280px) minmax(0, 180px) minmax(0, 210px) minmax(0, 260px) minmax(0, 330px)', columnGap: '55px', rowGap: '40px' }}>
